@@ -1,0 +1,13 @@
+#tabla{
+    width: 90%;
+    margin: 10%;
+}
+
+#tabla > th, #tabla > td{
+    width: 20%;
+    text-align: center;
+}
+
+#tabla > tr{
+    height: 30px;
+}
