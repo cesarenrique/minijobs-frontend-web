@@ -7,7 +7,7 @@
 
     fetch('{{$url}}').then(response =>{
         if(!response.ok){
-            throw new Error('API no responde');
+             throw new Error('API no responde');
         }
         return response.json();
     }).then(data =>{
