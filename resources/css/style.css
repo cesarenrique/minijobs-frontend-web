@@ -1,18 +1,82 @@
+/** TABLAS */
 #tabla{
     width: 90%;
-    margin: 10%;
+    margin: 5%;
 }
 
 #tabla  th{
-    width: 20%;
+    width: 15%;
     text-align: center;
 }
 
 #tabla  td{
-    width: 20%;
+    width: 15%;
     text-align: center;
 }
 
 #tabla  tr{
     height: 30px;
 }
+
+#tabla2{
+    width: 90%;
+    margin: 5%;
+}
+
+#tabla2  th{
+    width: 33%;
+    text-align: center;
+}
+
+#tabla2  td{
+    width: 33%;
+    text-align: center;
+}
+
+#tabla2  tr{
+    height: 30px;
+}
+
+#tabla3{
+    width: 90%;
+    margin: 5%;
+}
+
+#tabla3  th{
+    width: 15%;
+    text-align: center;
+}
+
+#tabla3  td{
+    width: 15%;
+    text-align: center;
+}
+
+#tabla3  tr{
+    height: 30px;
+}
+
+/* MENU*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  li {
+    float: left;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: #111;
+  }

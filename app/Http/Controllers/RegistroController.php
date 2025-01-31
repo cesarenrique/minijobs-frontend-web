@@ -8,9 +8,9 @@ class RegistroController extends Controller
 {
     //
     public function registro(){
-
-        $url=env('API_CONSUME').'/user';
-        $url2=url('/administrador/principal');
-        return view('auth.registro')->with('url',$url)->with('url2',$url2);
+        $urls=[];
+        $urls["api"]=env('API_CONSUME').'/user';
+        $urls["inicio"]=url('/login');
+        return view('auth.registro')->with('urls',$urls);
     }
 }

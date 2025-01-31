@@ -2,8 +2,8 @@
 
 @section('content')
 <table id="tabla">
-
-    <script>
+</table>
+<script>
 
     fetch('{{$urls["api"]}}').then(response =>{
         if(!response.ok){
@@ -25,18 +25,17 @@
         node04.appendChild(document.createTextNode("NIF"))
         node05=document.createElement("th")
         node05.appendChild(document.createTextNode("EMAIL"))
-        node06=document.createElement("td")
-        node06.appendChild(document.createTextNode("OPCIONES"))
+        node06=document.createElement("th")
+        node06.appendChild(document.createTextNode("VER"))
         node00.appendChild(node01)
         node00.appendChild(node02)
         node00.appendChild(node03)
         node00.appendChild(node04)
         node00.appendChild(node05)
         node00.appendChild(node06)
-
         let elementos=node00
 
-        let array=data.data.sinRoles
+        let array=data.data.users
 
         //console.log(array)
 
@@ -72,7 +71,7 @@
     }).catch(error => {
         console.error('Error', error);
     })
-    </script>
-</table>
+</script>
+
 
 @endsection

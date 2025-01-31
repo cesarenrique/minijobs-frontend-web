@@ -4,7 +4,7 @@
 
 <h2 class="text-center"> Condiciones</h2>
 <div style="width:100%;">
-    <button class="bg-blue-900" style="width:10%; margin:auto;" id="rol">Acepto condiciones</button>
+    <button class="bg-blue-900" style="width: 10%; margin-left: 45%; margin-right: 45%;" id="rol" >Acepto condiciones</button>
 </div>
 <script>
     let formData = new FormData()
@@ -22,7 +22,7 @@
             return response.json();
         }).then(data =>{
 
-            location.replace('{{route("administrador.principal")}}')
+            location.replace('{{$urls["roles"]}}')
         }).catch(error => {
             console.error('Error', error);
         })

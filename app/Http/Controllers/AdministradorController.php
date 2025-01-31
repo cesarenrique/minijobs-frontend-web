@@ -7,37 +7,63 @@ use Illuminate\Support\Facades\Http;
 class AdministradorController extends Controller
 {
     //
-    public function principal(){
-        return view('administrador.principal');
+    public function busquedas(){
+        return view('administrador.busquedas');
+    }
+
+
+
+    public function crear(){
+        return view('administrador.crearAdministrador');
     }
 
     public function administradores(){
-        $url=env('API_CONSUME').'/administrador/complete';
-        return view('administrador.administradores')->with('url',$url);
+        $urls=[];
+        $urls["api"]=env('API_CONSUME').'/administrador/complete';
+        $urls["user"]=url('/user');
+        return view('administrador.administradores')->with('urls',$urls);
     }
 
     public function encargados(){
-        $url=env('API_CONSUME').'/encargado/complete';
-        return view('administrador.encargados')->with('url',$url);
+        $urls=[];
+        $urls["api"]=env('API_CONSUME').'/encargado/complete';
+        $urls["user"]=url('/user');
+        return view('administrador.encargados')->with('urls',$urls);
     }
 
     public function reclutadores(){
-        $url=env('API_CONSUME').'/reclutador/complete';
-        return view('administrador.reclutadores')->with('url',$url);
+        $urls=[];
+        $urls["api"]=env('API_CONSUME').'/reclutador/complete';
+        $urls["user"]=url('/user');
+        return view('administrador.reclutadores')->with('urls',$urls);
     }
 
     public function profesores(){
-        $url=env('API_CONSUME').'/profesor/complete';
-        return view('administrador.profesores')->with('url',$url);
+        $urls=[];
+        $urls["api"]=env('API_CONSUME').'/profesor/complete';
+        $urls["user"]=url('/user');
+        return view('administrador.profesores')->with('urls',$urls);
     }
 
     public function alumnos(){
-        $url=env('API_CONSUME').'/alumno/complete';
-        return view('administrador.alumnos')->with('url',$url);
+        $urls=[];
+        $urls["api"]=env('API_CONSUME').'/alumno/complete';
+        $urls["user"]=url('/user');
+        return view('administrador.alumnos')->with('urls',$urls);
     }
 
     public function sinroles(){
-        $url=env('API_CONSUME').'/sinrol/complete';
-        return view('administrador.sinroles')->with('url',$url);
+        $urls=[];
+        $urls["api"]=env('API_CONSUME').'/sinrol/complete';
+        $urls["user"]=url('/user');
+        return view('administrador.sinroles')->with('urls',$urls);
+    }
+
+    public function empresas(){
+        $urls=[];
+        $urls["api"]=env('API_CONSUME').'/empresa';
+        $urls["empresa"]=url('/empresa');
+
+        return view('administrador.empresas')->with('urls',$urls);
     }
 }

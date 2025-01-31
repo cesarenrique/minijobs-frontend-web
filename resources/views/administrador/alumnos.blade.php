@@ -5,7 +5,7 @@
 
     <script>
 
-    fetch('{{$url}}').then(response =>{
+    fetch('{{$urls["api"]}}').then(response =>{
         if(!response.ok){
             throw new Error('API no responde');
         }
@@ -25,11 +25,14 @@
         node04.appendChild(document.createTextNode("NIF"))
         node05=document.createElement("th")
         node05.appendChild(document.createTextNode("EMAIL"))
+        node06=document.createElement("td")
+        node06.appendChild(document.createTextNode("OPCIONES"))
         node00.appendChild(node01)
         node00.appendChild(node02)
         node00.appendChild(node03)
         node00.appendChild(node04)
         node00.appendChild(node05)
+        node00.appendChild(node06)
 
         let elementos=node00
 
@@ -50,11 +53,19 @@
             node04.appendChild(document.createTextNode(array[i].NIF))
             node05=document.createElement("td")
             node05.appendChild(document.createTextNode(array[i].email))
+            node06=document.createElement("td")
+            subnode01=document.createTextNode("VER")
+            subnode02=document.createElement("a")
+            subnode02.appendChild(subnode01)
+            referencia='{{$urls["user"]}}'+'/'+array[i].id
+            subnode02.setAttribute('href',referencia)
+            node06.appendChild(subnode02)
             node00.appendChild(node01)
             node00.appendChild(node02)
             node00.appendChild(node03)
             node00.appendChild(node04)
             node00.appendChild(node05)
+            node00.appendChild(node06)
             elementos=node00
         }
         document.getElementById('tabla').appendChild(elementos)
