@@ -38,7 +38,7 @@
                 <input class="bg-white " style="width:100%; margin: auto;  padding-top: 10px; padding-bottom: 10px;" type="password" id="fpassword_confirmed" name="password_confirmed" placeholder="confirmacion password"/>
             </div>
             <div class="" style="margin: 5%; width: 90%;">
-                <button id="boton-registro" type="submit"  class="bg-slate-400" style="width:100%; margin: auto;  margin-top: 30px; padding-top: 10px; padding-bottom: 10px;" type="text" id="fusername" name="username" placeholder="Username">
+                <button id="boton-registro" type="submit"  class="bg-slate-400" style="width:100%; margin: auto;  margin-top: 30px; padding-top: 10px; padding-bottom: 10px;">
                     Registrar
                 </button>
             </div>

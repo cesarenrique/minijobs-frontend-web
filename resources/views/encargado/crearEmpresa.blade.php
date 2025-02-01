@@ -68,7 +68,7 @@
             if(data.data.empresa.id===undefined){
                 console.log("error undefinid empresa")
             }
-            location.replace("{{route('administrador.empresas')}}")
+            location.replace("{{route('empresas')}}")
         }).catch(error => {
             console.error('Error', error);
         })

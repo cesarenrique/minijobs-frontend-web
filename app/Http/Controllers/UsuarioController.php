@@ -17,6 +17,7 @@ class UsuarioController extends Controller
         $urls=[];
         $urls["api"]=env('API_CONSUME').'/user/'.$id;
         $urls["roles"]=url('/usuario/'.$id.'/rolchoice2');
+        $urls["cambioRol"]=url('/usuario/'.$id.'/updateUltimoRol');
         $urls["encargado"]=url('/encargado/');
         return view('usuario.usuario')->with('urls',$urls);
     }
@@ -47,6 +48,14 @@ class UsuarioController extends Controller
         $urls["reclutador"]=url('/usuario/rolchoice/reclutador');
         $urls["administrador"]=url('/usuario/rolchoice/administrador');
         return view('usuario.rolchoice2')->with('urls',$urls)->with('$id',$id);
+    }
+
+    public function rolchoice3($id){
+        $urls=[];
+        $urls["principal"]=env('API_CONSUME').'/user/'.$id;
+        $urls["api2"]=env('API_CONSUME').'/user/'.$id.'/updateUltimoRol';
+        $urls["cambiarRol"]=url('/usuario/'.$id.'/updateUltimoRol');
+        return view('usuario.rolchoice3')->with('urls',$urls)->with('$id',$id);
     }
     public function rolchoiceAdministrador($id){
         $urls=[];

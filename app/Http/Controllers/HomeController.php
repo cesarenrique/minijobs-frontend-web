@@ -9,6 +9,30 @@ class HomeController extends Controller
     //
     public function home(){
         $urls=[];
-        return view('welcome')->with('urls',$urls);
+        return view('home.welcome')->with('urls',$urls);
+    }
+
+    public function homeAdministrador(){
+        $urls=[];
+        $urls["perfil"]=url('user');
+        return view('home.welcomeAdministrador')->with('urls',$urls);
+    }
+
+    public function homeEncargado(){
+        $urls=[];
+        $urls["perfil"]=url('user');
+        return view('home.welcomeEncargado')->with('urls',$urls);
+    }
+
+    public function homeReclutador(){
+        $urls=[];
+        $urls["perfil"]=url('user');
+        return view('home.welcomeReclutador')->with('urls',$urls);
+    }
+
+    public function homeSinRol(){
+        $urls=[];
+        $urls["perfil"]=url('user');
+        return view('home.welcomeSinRol')->with('urls',$urls);
     }
 }

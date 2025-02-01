@@ -24,12 +24,12 @@
 }
 
 #tabla2  th{
-    width: 33%;
+    width: 20%;
     text-align: center;
 }
 
 #tabla2  td{
-    width: 33%;
+    width: 20%;
     text-align: center;
 }
 
@@ -53,6 +53,25 @@
 }
 
 #tabla3  tr{
+    height: 30px;
+}
+
+#tabla4{
+    width: 90%;
+    margin: 5%;
+}
+
+#tabla4  th{
+    width: 15%;
+    text-align: center;
+}
+
+#tabla4  td{
+    width: 15%;
+    text-align: center;
+}
+
+#tabla4  tr{
     height: 30px;
 }
 

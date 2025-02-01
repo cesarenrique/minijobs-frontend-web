@@ -26,11 +26,6 @@
         </form>
 
     </div>
-    <div class="" style="margin: 5%; width: 90%;">
-        <button id="boton-registro2" type="submit"  class="bg-slate-400" style="width:100%; margin: auto;  margin-top: 30px; padding-top: 10px; padding-bottom: 10px;" type="text" id="fusername" name="username" placeholder="Username">
-            Vincular Empresa
-        </button>
-    </div>
 <script>
     let cargo_id=0;
     let registro=document.getElementById('boton-registro')
@@ -54,45 +49,15 @@
             return response.json();
         }).then(data =>{
             console.log(data);
-            cargo_id=data.data.cargo.id
+            let cargo_id=data.data.cargo.id
             if(data.data.cargo.id===undefined){
                 console.log("error undefinid empresa")
             }
-            alert("Cargo Creado")
+            location.replace("{{$urls['cargo']}}"+"/"+cargo_id)
         }).catch(error => {
             console.error('Error', error);
         })
     }
 
-    let registro2=document.getElementById('boton-registro2')
-    registro2.onclick=function registrar2(e){
-        e.preventDefault()
-        console.log(cargo_id)
-        if(cargo_id!=0){
-            let formData = new FormData()
-            formData.append('cargo_id',cargo_id)
-            formData.append('empresa_id',{{$empresa_id}})
-
-            fetch('{{$urls["api2"]}}',{
-                method: "POST",
-                body: formData
-
-            }).then(response =>{
-
-                if(!response.ok){
-                    throw new Error('API no responde');
-                }
-                return response.json();
-            }).then(data =>{
-                console.log(data);
-                if(data.data.cargoEmpresa.id===undefined){
-                    console.log("error undefinid empresa")
-                }
-                location.replace("{{route('administrador.empresas')}}")
-            }).catch(error => {
-                console.error('Error', error);
-            })
-        }
-    }
 </script>
 @endsection

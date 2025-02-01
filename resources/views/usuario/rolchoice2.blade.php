@@ -29,7 +29,7 @@
             <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Empresario</h2>
         </a>
     </div>
-    <div class="bg-indigo-200 text-center p-4 " style="height: 15rem;">
+    <div id="rolAdministradorOpcion" class="bg-indigo-200 text-center p-4 " style="height: 15rem; display:none">
         <a id="rolAdministrador" href='#' style="height: 15rem;">
             <h2 id="rolAdministradorh2"></h2>
             <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Administrador</h2>
@@ -37,6 +37,12 @@
     </div>
 </div>
 <script>
+    let nombreUsuario5= localStorage.getItem('minijobs-usuario')
+    let rolUsuario5= localStorage.getItem('minijobs-rol-usuario')
+    let rolAdministradorOpcion=document.getElementById('rolAdministradorOpcion');
+    if(rolUsuario5==5){
+        rolAdministradorOpcion.style.display="block";
+    }
     let unavez=0;
     let userid=0;
     let rolEstudiantechoice=1

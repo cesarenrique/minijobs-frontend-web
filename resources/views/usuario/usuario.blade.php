@@ -3,6 +3,10 @@
 @section('content')
 <table id="tabla">
 </table>
+<h2 class="text-center">Roles</h2>
+<div class="text-center" id="usuario-roles">
+
+</div>
 <div class="grid grid-cols-2 sm:grid-cols-3">
     <div id="estadoAmistad" class="bg-indigo-200 text-center p-4 " style="height: 20rem; display: none;">
         <a href="#" style="height: 20rem;">
@@ -29,22 +33,17 @@
         <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Añadir Roles</h2>
         </a>
     </div>
-    <div id="crearEmpresa" class="bg-indigo-200 text-center p-4 " style="height: 20rem; display: none;">
-        <a href='{{$urls["roles"]}}' style="height: 20rem;">
-        <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Crear Empresa</h2>
+    <div id="cambiarRol" class="bg-indigo-200 text-center p-4 " style="height: 20rem; display: none;">
+        <a href='{{$urls["cambioRol"]}}' style="height: 20rem;">
+        <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Cambiar Rol</h2>
         </a>
     </div>
-    <div id="listarEmpresas" class="bg-indigo-200 text-center p-4 " style="height: 20rem; display: none;">
-        <a href='{{$urls["roles"]}}' style="height: 20rem;">
-        <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Listar Empresas</h2>
-        </a>
-    </div>
-    <div id="login-perfil-link" class="bg-indigo-200 text-center p-4 " style="height: 20rem; ">
+    <div id="login-perfil-link" class="bg-indigo-200 text-center p-4 " style="height: 20rem; display: none;">
         <a href='#' style="height: 20rem;">
         <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Loguearse</h2>
         </a>
     </div>
-    <div id="registro-perfil-link" class="bg-indigo-200 text-center p-4 " style="height: 20rem; ">
+    <div id="registro-perfil-link" class="bg-indigo-200 text-center p-4 " style="height: 20rem; display: none; ">
         <a href="{{route('registro')}}" style="height: 20rem;">
         <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Registrarse</h2>
         </a>
@@ -52,7 +51,17 @@
 </div>
 <script>
     let usuarioLogueado=0;
+    let nombreUsuario3= localStorage.getItem('minijobs-usuario')
+    let rolUsuario3= localStorage.getItem('minijobs-rol-usuario')
+    let idUsuario3= localStorage.getItem('minijobs-id-usuario')
 
+    if(nombreUsuario3!=null){
+        usuarioLogueado=rolUsuario;
+
+    }else{
+        loginPerfilLink.style.display="block";
+        registroPerfilLink.style.display="block";
+    }
     fetch('{{$urls["api"]}}').then(response =>{
         if(!response.ok){
             throw new Error('API no responde');
@@ -107,24 +116,53 @@
         let editarPerfil=document.getElementById("editarPerfil");
         let editarPagos=document.getElementById("editarPagos");
         let editarRoles=document.getElementById("editarRoles");
+        let cambiarRol=document.getElementById("cambiarRol");
         let estadoAmistad=document.getElementById("estadoAmistad");
         let estadoSeguir=document.getElementById("estadoSeguir");
         let loginPerfilLink=document.getElementById("login-perfil-link");
         let registroPerfilLink=document.getElementById("registro-perfil-link");
         if(usuarioLogueado!==0){
-            loginPerfilLink.style.display="none";
-            registroPerfilLink.style.display="none";
-            estadoAmistad.style.display="block";
-            estadoSeguir.style.display="block";
-            if(usuarioLogueado==data.data.user.id){
+            if(idUsuario3!=data.data.user.id){
+                estadoAmistad.style.display="block";
+                estadoSeguir.style.display="block";
+            }else{
                 editarPerfil.style.display="block";
                 editarPagos.style.display="block";
                 editarRoles.style.display="block";
+                cambiarRol.style.display="block";
+
             }
-            if(data.data.encargado==1){
-                crearEmpresa.style.display="block";
-                listarEmpresas.style.display="block";
+
+            if(rolUsuario3==5){
+                editarRoles.style.display="block";
             }
+        }
+        let usuarioRoles=document.getElementById("usuario-roles");
+
+        if(data.data.administrador==1){
+            div05=document.createElement("div")
+            div05.appendChild(document.createTextNode("administrador"))
+            usuarioRoles.appendChild(div05)
+        }
+        if(data.data.encargado==1){
+            div05=document.createElement("div")
+            div05.appendChild(document.createTextNode("encargado"))
+            usuarioRoles.appendChild(div05)
+        }
+        if(data.data.reclutador==1){
+            div05=document.createElement("div")
+            div05.appendChild(document.createTextNode("reclutador"))
+            usuarioRoles.appendChild(div05)
+        }
+        if(data.data.alumno==1){
+            div05=document.createElement("div")
+            div05.appendChild(document.createTextNode("alumno"))
+            usuarioRoles.appendChild(div05)
+        }
+        if(data.data.profesor==1){
+            div05=document.createElement("div")
+            div05.appendChild(document.createTextNode("profesor"))
+            usuarioRoles.appendChild(div05)
         }
     }).catch(error => {
         console.error('Error', error);
