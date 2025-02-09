@@ -39,4 +39,11 @@ class PanelControlController extends Controller
         $urls["crear"]=url('sinrol/');
         return view('panelcontrol.panelcontrolSinRol')->with('urls',$urls);
     }
+
+    public function panelcontrolAlumno(){
+        $urls=[];
+        $urls["api"]=env('API_CONSUME')."/alumno/user/";
+        $urls["crear"]=url('alumno/');
+        return view('panelcontrol.panelcontrolAlumno')->with('urls',$urls);
+    }
 }

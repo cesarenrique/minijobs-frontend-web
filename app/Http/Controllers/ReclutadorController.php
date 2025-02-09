@@ -6,12 +6,37 @@ use Illuminate\Http\Request;
 
 class ReclutadorController extends Controller
 {
+
+
+    public function misAnuncioAlumno($idAnuncio){
+        $urls=[];
+        $urls["api"]=env('API_CONSUME').'/anuncio/'.$idAnuncio.'/complete';
+        $urls["api2"]=env('API_CONSUME').'/candidato/'.$idAnuncio.'/usuarios';
+        $urls["user"]=url('/alumno');
+        return view('reclutador.misAlumnos')->with('urls',$urls);
+    }
+
     //
     public function anuncio($idAnuncio){
         $urls=[];
         $urls["api"]=env('API_CONSUME').'/anuncio/'.$idAnuncio.'/complete';
-        $urls["cargos"]=url('/empresa').'/'.$idAnuncio.'/cargo';
-        return view('reclutador.anuncio')->with('urls',$urls)->with('empresa_id',$idAnuncio);
+        $urls["cargos"]=url('/empresa');
+        return view('reclutador.anuncio')->with('urls',$urls);
+    }
+
+    public function anuncios(){
+        $urls=[];
+        $urls["api"]=env('API_CONSUME').'/anuncio';
+        $urls["anuncio"]=url('/anuncio');
+        return view('reclutador.anuncios')->with('urls',$urls);
+    }
+
+
+    public function misAnuncios($idReclutador){
+        $urls=[];
+        $urls["api"]=env('API_CONSUME').'/candidato/'.$idReclutador.'/anuncios';
+        $urls["alumno"]=url('/anuncio');
+        return view('reclutador.anuncios2')->with('urls',$urls);
     }
 
     public function crearAnuncio($idReclutador,$idEncargado,$idEmpresa,$idCargo){
@@ -53,6 +78,13 @@ class ReclutadorController extends Controller
         $urls["cargo"]=url('/cargo');
         $urls["creaAnuncio"]=url('/reclutador')."/".$idReclutador.'/encargado/'.$idEncargado.'/empresa/'.$idEmpresa.'/cargo/'.$idCargo.'/crearAnuncio';
         return view('reclutador.cargo2')->with('urls',$urls)->with('empresa_id',$idEmpresa)->with('encargado_id',$idEncargado)->with('cargo_id',$idCargo)->with('reclutador_id',$idReclutador);
+    }
+
+    public function candidatos($idAnuncio){
+        $urls=[];
+        $urls["api"]=env('API_CONSUME').'/candidato/'.$idAnuncio.'/alumnos';
+        $urls["alumno"]=url('/alumno');
+        return view('reclutador.anuncios2')->with('urls',$urls);
     }
 
 }

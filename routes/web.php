@@ -10,12 +10,15 @@ use App\Http\Controllers\ReclutadorController;
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PanelControlController;
+use App\Http\Controllers\AcademicoController;
 
 Route::get('/',[HomeController::class,'home'])->name("home");
 Route::get('/home/administrador',[HomeController::class,'homeAdministrador'])->name("home.administrador");
 Route::get('/home/encargado',[HomeController::class,'homeEncargado'])->name("home.encargado");
 Route::get('/home/reclutador',[HomeController::class,'homeReclutador'])->name("home.reclutador");
 Route::get('/home/sinrol',[HomeController::class,'homeSinRol'])->name("home.sinrol");
+Route::get('/home/alumno',[HomeController::class,'homeAlumno'])->name("home.alumno");
+Route::get('/home/profesor',[HomeController::class,'homeProfesor'])->name("home.profesor");
 
 Route::get('/usuario/{username}/rolchoice',[UsuarioController::class,'rolchoice']);
 Route::get('/usuario/{id}/updateUltimoRol',[UsuarioController::class,'rolchoice3']);
@@ -38,7 +41,16 @@ Route::get('/reclutador/{idReclutador}/encargado/{idEncargado}/empresa/{idEmpres
 Route::get('/reclutador/{idReclutador}/encargado/{idEncargado}/empresa/{idEmpresa}/cargo/{idCargo}',[ReclutadorController::class,'reclutadorEmpresaCargoEscoger']);
 Route::get('/reclutador/{idReclutador}/encargado/{idEncargado}/empresa/{idEmpresa}/cargo/{idCargo}/crearAnuncio',[ReclutadorController::class,'crearAnuncio']);
 Route::get('/reclutador/{idEncargado}/empresa',[ReclutadorController::class,'empresas']);
+Route::get('/anuncio/{idAnuncio}/alumnos',[ReclutadorController::class,'candidatos']);
+Route::get('/reclutador/{idReclutador}/anuncios',[ReclutadorController::class,'misAnuncios']);
+Route::get('/reclutador/anuncio/{idAnuncio}/alumno',[ReclutadorController::class,'misAnuncioAlumno']);
 
+
+Route::get('/alumno/{idAlumno}/anuncios',[AlumnoController::class,'anuncios']);
+Route::get('/alumno/{idAlumno}/anuncio/{idAnuncio}',[AlumnoController::class,'postularAlumnoAnuncio']);
+Route::get('/alumno/{idAlumno}/postulados',[AlumnoController::class,'postulados']);
+
+Route::get('/anuncio/{idAnuncio}/usuarios',[ReclutadorController::class,'misAnuncioAlumno']);
 Route::get('/anuncio/{idAnuncio}',[ReclutadorController::class,'anuncio']);
 
 Route::get('/empresa/{idEmpresa}/anuncio',[EncargadoController::class,'anunciosEmpresa']);
@@ -47,11 +59,14 @@ Route::get('/empresa/{idEmpresa}',[EncargadoController::class,'empresa']);
 
 Route::get('/cargo/{idCargo}',[EncargadoController::class,'cargo']);
 
+Route::get('/academico/crearModelo',[AcademicoController::class,'modelo']);
+
+
 Route::get('/user/anonimo',[UsuarioController::class,'anonimo'])->name('usuario.anonimo');
 Route::get('/user/{id}',[UsuarioController::class,'usuario']);
 
 Route::get('/cargo',[EncargadoController::class,'cargos'])->name('cargos');
-Route::get('/anuncio',[AlumnoController::class,'anuncios'])->name('anuncios');
+Route::get('/anuncio',[ReclutadorController::class,'anuncios'])->name('anuncios');
 Route::get('/usuarios',[UsuarioController::class,'usuarios'])->name('usuarios');
 Route::get('/empresas',[AdministradorController::class,'empresas'])->name('empresas');
 Route::get('/encargados',[AdministradorController::class,'encargados'])->name('encargados');
@@ -65,6 +80,7 @@ Route::get('/panelcontrol/encargado',[PanelControlController::class,'panelcontro
 Route::get('/panelcontrol/administrador',[PanelControlController::class,'panelcontrolAdministrador'])->name('panelcontrol.administrador');
 Route::get('/panelcontrol/anonimo',[PanelControlController::class,'panelcontrolAnonimo'])->name('panelcontrol.anonimo');
 Route::get('/panelcontrol/sinrol',[PanelControlController::class,'panelcontrolSinRol'])->name('panelcontrol.sinrol');
+Route::get('/panelcontrol/alumno',[PanelControlController::class,'panelcontrolAlumno'])->name('panelcontrol.alumno');
 
 Route::get('/administrador/sinroles',[AdministradorController::class,'sinroles'])->name('administrador.sinroles');
 Route::get('/administrador/administradores',[AdministradorController::class,'administradores'])->name('administrador.administradores');

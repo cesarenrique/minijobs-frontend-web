@@ -35,4 +35,17 @@ class HomeController extends Controller
         $urls["perfil"]=url('user');
         return view('home.welcomeSinRol')->with('urls',$urls);
     }
+
+
+    public function homeProfesor(){
+        $urls=[];
+        $urls["perfil"]=url('user');
+        return view('home.welcomeAlumno')->with('urls',$urls);
+    }
+
+    public function homeAlumno(){
+        $urls=[];
+        $urls["perfil"]=url('user');
+        return view('home.welcomeAlumno')->with('urls',$urls);
+    }
 }

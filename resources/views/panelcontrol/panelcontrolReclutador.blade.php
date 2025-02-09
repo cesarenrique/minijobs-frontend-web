@@ -4,7 +4,7 @@
 <div class="w-100">
     <div class="grid grid-cols-2 sm:grid-cols-3">
         <div class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
-            <a id="crearEmpresaA" href='#' style="height: 20rem;">
+            <a id="misAnunciosA" href='#' style="height: 20rem;">
             <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Mis Anuncios</h2>
             </a>
         </div>
@@ -31,6 +31,7 @@ let idUsuario6= localStorage.getItem('minijobs-id-usuario')
         return response.json();
     }).then(data =>{
         if(data.data.reclutador.id!=undefined){
+            document.getElementById('misAnunciosA').setAttribute('href','{{$urls["crear"]}}'+"/"+data.data.reclutador.id+'/anuncios')
             document.getElementById('listarEmpresasA').setAttribute('href','{{$urls["crear"]}}'+"/"+data.data.reclutador.id+'/empresa')
         }
     }).catch(error => {

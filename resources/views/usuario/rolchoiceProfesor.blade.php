@@ -21,7 +21,7 @@
             }
             return response.json();
         }).then(data =>{
-
+            localStorage.setItem('minijobs-rol-usuario',2)
             location.replace('{{$urls["roles"]}}')
         }).catch(error => {
             console.error('Error', error);

@@ -43,6 +43,7 @@
         </form>
 
     </div>
+</div>
 <script>
      fetch('{{$urls["api3"]}}').then(response =>{
         if(!response.ok){

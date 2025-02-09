@@ -144,30 +144,35 @@
             if(rolEstudiantechoice===1){
                 rolEstudiante.onclick=function colocarRolEstudiante(e){
                     e.preventDefault()
+                    localStorage.setItem('minijobs-rol-usuario',data.data.user.ultimo_rol)
                     location.replace('{{$urls["alumno"]."/"}}'+userid.toString())
                 }
             }
             if(rolProfesorchoice===1){
                 rolProfesor.onclick=function colocarRolProfesor(e){
                     e.preventDefault()
+                    localStorage.setItem('minijobs-rol-usuario',data.data.user.ultimo_rol)
                     location.replace('{{$urls["profesor"]."/"}}'+userid.toString())
                 }
             }
             if(rolReclutadorchoice===1){
                 rolReclutador.onclick=function colocarRolReclutador(e){
                     e.preventDefault()
+                    localStorage.setItem('minijobs-rol-usuario',data.data.user.ultimo_rol)
                     location.replace('{{$urls["reclutador"]."/"}}'+userid.toString())
                 }
             }
             if(rolEncargadochoice===1){
                 rolEncargado.onclick=function colocarRolEncargado(e){
                     e.preventDefault()
+                    localStorage.setItem('minijobs-rol-usuario',data.data.user.ultimo_rol)
                     location.replace('{{$urls["encargado"]."/"}}'+userid.toString())
                 }
             }
             if(rolAdministradorchoice===1){
                 rolAdministrador.onclick=function colocarRolEncargado(e){
                     e.preventDefault()
+                    localStorage.setItem('minijobs-rol-usuario',data.data.user.ultimo_rol)
                     location.replace('{{$urls["administrador"]."/"}}'+userid.toString())
                 }
             }

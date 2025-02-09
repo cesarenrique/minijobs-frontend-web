@@ -57,8 +57,16 @@
             localStorage.setItem('minijobs-rol-usuario',data.data.user.ultimo_rol)
             if(data.data.user.ultimo_rol==5){
                 location.replace('{{route("home.administrador")}}')
-            }else if(data.data.user.ultimo_rol=4){
+            }else if(data.data.user.ultimo_rol==4){
                 location.replace('{{route("home.encargado")}}')
+            }else if(data.data.user.ultimo_rol==3){
+                location.replace('{{route("home.reclutador")}}')
+            }else if(data.data.user.ultimo_rol==2){
+                location.replace('{{route("home.profesor")}}')
+            }else if(data.data.user.ultimo_rol==1){
+                location.replace('{{route("home.alumno")}}')
+            }else if(data.data.user.ultimo_rol==0){
+                location.replace('{{route("home.sinrol")}}')
             }
         }).catch(error => {
             console.error('Error', error);

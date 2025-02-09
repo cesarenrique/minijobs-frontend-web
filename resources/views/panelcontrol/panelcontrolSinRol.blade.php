@@ -20,9 +20,9 @@ let idUsuario6= localStorage.getItem('minijobs-id-usuario')
         }
         return response.json();
     }).then(data =>{
-        if(data.data.reclutador.id!=undefined){
+        //if(data.data.reclutador.id!=undefined){
             //document.getElementById('listarEmpresasA').setAttribute('href',''+"/"+data.data.sinrol.id)
-        }
+        //}
     }).catch(error => {
         console.error('Error', error);
     })

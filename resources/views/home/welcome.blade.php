@@ -18,4 +18,27 @@
         </a>
     </div>
 </div>
+<script>
+    let nombreUsuarioLink10=document.getElementById("nombre-Usuario-link");
+
+
+    if(nombreUsuarioLink10!=null){
+        let rolUsuario10= localStorage.getItem('minijobs-rol-usuario')
+        if(rolUsuario10==null){
+            if(rolUsuario10==5){
+                location.replace('{{route("home.administrador")}}')
+            }else if(rolUsuario10==4){
+                location.replace('{{route("home.encargado")}}')
+            }else if(rolUsuario10==3){
+                location.replace('{{route("home.reclutador")}}')
+            }else if(rolUsuario10==2){
+                location.replace('{{route("home.profesor")}}')
+            }else if(rolUsuario10==1){
+                location.replace('{{route("home.alumno")}}')
+            }else if(rolUsuario10==0){
+                location.replace('{{route("home.sinrol")}}')
+            }
+        }
+    }
+</script>
 @endsection

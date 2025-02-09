@@ -39,6 +39,12 @@
             }else if(rolUsuario==3){
                 rolLinkA.innerHTML="Rol:Reclutador";
                 homeLinkA.setAttribute("href",'{{route("home.reclutador")}}')
+            }else if(rolUsuario==2){
+                rolLinkA.innerHTML="Rol:Profesor";
+                homeLinkA.setAttribute("href",'{{route("home.reclutador")}}')
+            }else if(rolUsuario==1){
+                rolLinkA.innerHTML="Rol:Alumno";
+                homeLinkA.setAttribute("href",'{{route("home.alumno")}}')
             }else if(rolUsuario==0){
                 rolLinkA.innerHTML="Rol:Sin Rol";
                 homeLinkA.setAttribute("href",'{{route("home.sinrol")}}')

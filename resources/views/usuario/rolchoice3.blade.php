@@ -58,97 +58,94 @@
     let rolAdministrador=document.getElementById('rolAdministradorContainer');
 
 
-        fetch('{{$urls["principal"]}}').then(response =>{
+    fetch('{{$urls["principal"]}}').then(response =>{
 
         if(!response.ok){
             throw new Error('API no responde');
-            }
-            return response.json();
-        }).then(data =>{
-            console.log(data)
-            node00=document.createElement("tr")
-            node01=document.createElement("th")
-            node01.appendChild(document.createTextNode("ID"))
-            node02=document.createElement("th")
-            node02.appendChild(document.createTextNode("USERNAME"))
-            node03=document.createElement("th")
-            node03.appendChild(document.createTextNode("NAME"))
-            node04=document.createElement("th")
-            node04.appendChild(document.createTextNode("NIF"))
-            node05=document.createElement("th")
-            node05.appendChild(document.createTextNode("EMAIL"))
+        }
+        return response.json();
+    }).then(data =>{
+        console.log(data)
+        node00=document.createElement("tr")
+        node01=document.createElement("th")
+        node01.appendChild(document.createTextNode("ID"))
+        node02=document.createElement("th")
+        node02.appendChild(document.createTextNode("USERNAME"))
+        node03=document.createElement("th")
+        node03.appendChild(document.createTextNode("NAME"))
+        node04=document.createElement("th")
+        node04.appendChild(document.createTextNode("NIF"))
+        node05=document.createElement("th")
+        node05.appendChild(document.createTextNode("EMAIL"))
 
-            node00.appendChild(node01)
-            node00.appendChild(node02)
-            node00.appendChild(node03)
-            node00.appendChild(node04)
-            node00.appendChild(node05)
-            let elementos=node00
+        node00.appendChild(node01)
+        node00.appendChild(node02)
+        node00.appendChild(node03)
+        node00.appendChild(node04)
+        node00.appendChild(node05)
+        let elementos=node00
 
-            let elem=data.data.user
+        let elem=data.data.user
 
             //console.log(array)
 
-            document.getElementById('tabla').appendChild(elementos)
-            node00=document.createElement("tr")
-            node01=document.createElement("td")
-            node01.appendChild(document.createTextNode(elem.id))
-            node02=document.createElement("td")
-            node02.appendChild(document.createTextNode(elem.username))
-            node03=document.createElement("td")
-            node03.appendChild(document.createTextNode(elem.name))
-            node04=document.createElement("td")
-            node04.appendChild(document.createTextNode(elem.NIF))
-            node05=document.createElement("td")
-            node05.appendChild(document.createTextNode(elem.email))
-            node00.appendChild(node01)
-            node00.appendChild(node02)
-            node00.appendChild(node03)
-            node00.appendChild(node04)
-            node00.appendChild(node05)
-            elementos=node00
-            document.getElementById('tabla').appendChild(elementos)
-            if(data.data.alumno==1){
-                rolEstudiante.style.display="block";
-                rolEstudiantechoice=0
-            }
-            if(data.data.profesor==1){
-                rolProfesor.style.display="block";
-                rolProfesorchoice=0
-            }
+        document.getElementById('tabla').appendChild(elementos)
+        node00=document.createElement("tr")
+        node01=document.createElement("td")
+        node01.appendChild(document.createTextNode(elem.id))
+        node02=document.createElement("td")
+        node02.appendChild(document.createTextNode(elem.username))
+        node03=document.createElement("td")
+        node03.appendChild(document.createTextNode(elem.name))
+        node04=document.createElement("td")
+        node04.appendChild(document.createTextNode(elem.NIF))
+        node05=document.createElement("td")
+        node05.appendChild(document.createTextNode(elem.email))
+        node00.appendChild(node01)
+        node00.appendChild(node02)
+        node00.appendChild(node03)
+        node00.appendChild(node04)
+        node00.appendChild(node05)
+        elementos=node00
+        document.getElementById('tabla').appendChild(elementos)
+        if(data.data.alumno==1){
+            rolEstudiante.style.display="block";
+            rolEstudiantechoice=0
+        }
+        if(data.data.profesor==1){
+            rolProfesor.style.display="block";
+            rolProfesorchoice=0
+        }
 
-            if(data.data.encargado==1){
-                rolEncargado.style.display="block";
-                console.log("funciona");
-                rolEncargadochoice=0
-            }
-            if(data.data.reclutador==1){
-                rolReclutador.style.display="block";
-                rolReclutadorchoice=0
-            }
-            if(data.data.administrador==1){
-                rolAdministrador.style.display="block";
-                rolAdministradorchoice=0
-            }
+        if(data.data.encargado==1){
+            rolEncargado.style.display="block";
+            console.log("funciona");
+            rolEncargadochoice=0
+        }
+        if(data.data.reclutador==1){
+            rolReclutador.style.display="block";
+            rolReclutadorchoice=0
+        }
+        if(data.data.administrador==1){
+            rolAdministrador.style.display="block";
+            rolAdministradorchoice=0
+        }
 
-            userid=data.data.user.id
-            if(data.data.user.ultimo_rol==1){
-                document.getElementById('rolEstudianteh2').appendChild(document.createTextNode("Rol Activo"));
-            }else if(data.data.user.ultimo_rol==2){
-                document.getElementById('rolProfesorh2').appendChild(document.createTextNode("Rol Activo"));
-
-            }else if(data.data.user.ultimo_rol==3){
-                document.getElementById('rolReclutadorh2').appendChild(document.createTextNode("Rol Activo"));
-
-            }else if(data.data.user.ultimo_rol==4){
-                document.getElementById('rolEncargadoh2').appendChild(document.createTextNode("Rol Activo"));
-
-            }else if(data.data.user.ultimo_rol==5){
-                document.getElementById('rolAdministradorh2').appendChild(document.createTextNode("Rol Activo"));
-            }
-        }).catch(error => {
-            console.error('Error', error);
-        })
+        userid=data.data.user.id
+        if(data.data.user.ultimo_rol==1){
+            document.getElementById('rolEstudianteh2').appendChild(document.createTextNode("Rol Activo"));
+        }else if(data.data.user.ultimo_rol==2){
+            document.getElementById('rolProfesorh2').appendChild(document.createTextNode("Rol Activo"));
+        }else if(data.data.user.ultimo_rol==3){
+            document.getElementById('rolReclutadorh2').appendChild(document.createTextNode("Rol Activo"));
+        }else if(data.data.user.ultimo_rol==4){
+            document.getElementById('rolEncargadoh2').appendChild(document.createTextNode("Rol Activo"));
+        }else if(data.data.user.ultimo_rol==5){
+            document.getElementById('rolAdministradorh2').appendChild(document.createTextNode("Rol Activo"));
+        }
+    }).catch(error => {
+        console.error('Error', error);
+    })
 
 
 
