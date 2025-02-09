@@ -1,8 +1,6 @@
 @extends('app')
 
 @section('content')
-<table id="tabla">
-</table>
 <table id="tabla2">
 </table>
 <table id="tabla4">
@@ -22,6 +20,8 @@
         return response.json();
     }).then(data =>{
 
+
+
         node00=document.createElement("tr")
         node01=document.createElement("th")
         node01.appendChild(document.createTextNode("ID"))
@@ -33,39 +33,7 @@
 
         let elementos=node00
 
-        let elem=data.data.centro
-
-        //console.log(array)
-
-
-        document.getElementById('tabla').appendChild(elementos)
-        node00=document.createElement("tr")
-        node01=document.createElement("td")
-        node01.appendChild(document.createTextNode(elem.id))
-        node02=document.createElement("td")
-        node02.appendChild(document.createTextNode(elem.nombre))
-
-        node00.appendChild(node01)
-        node00.appendChild(node02)
-
-
-        elementos=node00
-
-        document.getElementById('tabla').appendChild(elementos)
-
-
-        node00=document.createElement("tr")
-        node01=document.createElement("th")
-        node01.appendChild(document.createTextNode("ID"))
-        node02=document.createElement("th")
-        node02.appendChild(document.createTextNode("NOMBRE"))
-
-        node00.appendChild(node01)
-        node00.appendChild(node02)
-
-        elementos=node00
-
-        elem=data.data.anyoPlanAcademico
+        let elem=data.data.anyoPlanAcademico
 
         //console.log(array)
 

@@ -2,7 +2,9 @@
 
 @section('content')
 <table id="tabla">
-
+</table>
+<table id="tabla3">
+</table>
     <script>
 
     fetch('{{$urls["api"]}}').then(response =>{
@@ -70,7 +72,7 @@
         //console.log(array)
 
         for(let i=0;i<array.length;i++){
-            document.getElementById('tabla').appendChild(elementos)
+            document.getElementById('tabla3').appendChild(elementos)
             node00=document.createElement("tr")
             node00.id="referenciar"+i;
             node01=document.createElement("td")
@@ -98,11 +100,11 @@
             node00.appendChild(node06)
             elementos=node00
         }
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla3').appendChild(elementos)
     }).catch(error => {
         console.error('Error', error);
     })
-    </script>
-</table>
+</script>
+
 
 @endsection

@@ -71,4 +71,8 @@ class AcademicoController extends Controller
         $urls["asignatura"]=url('academico/asignatura');
         return view('academico.carrera')->with('urls',$urls);
     }
+
+    public function asignatura($id){
+
+    }
 }

@@ -54,13 +54,14 @@
     let nombreUsuario3= localStorage.getItem('minijobs-usuario')
     let rolUsuario3= localStorage.getItem('minijobs-rol-usuario')
     let idUsuario3= localStorage.getItem('minijobs-id-usuario')
-
+    let loginPerfilLink11=document.getElementById('login-perfil-link');
+    let registroPerfilLink11=document.getElementById('registro-perfil-link');
     if(nombreUsuario3!=null){
         usuarioLogueado=rolUsuario;
 
     }else{
-        loginPerfilLink.style.display="block";
-        registroPerfilLink.style.display="block";
+        loginPerfilLink11.style.display="block";
+        registroPerfilLink11.style.display="block";
     }
     fetch('{{$urls["api"]}}').then(response =>{
         if(!response.ok){

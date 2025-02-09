@@ -67,7 +67,7 @@ Route::get('/cargo/{idCargo}',[EncargadoController::class,'cargo']);
 
 Route::get('/academico/carrera/{id}',[AcademicoController::class,'carrera']);
 Route::get('/academico/centro/{id}',[AcademicoController::class,'centro']);
-Route::get('/academico/asignatura/{id}',[AcademicoController::class,'modelo']);
+Route::get('/academico/asignatura/{id}',[AcademicoController::class,'asignatura']);
 Route::get('/academico/tipocarrera/{id}',[AcademicoController::class,'tipoCarrera']);
 Route::get('/academico/tiporamacarrera/{id}',[AcademicoController::class,'tipoRamaCarrera']);
 
