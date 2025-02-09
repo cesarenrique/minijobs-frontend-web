@@ -87,4 +87,6 @@ class ReclutadorController extends Controller
         return view('reclutador.anuncios2')->with('urls',$urls);
     }
 
+
+
 }

@@ -24,7 +24,7 @@
 
     if(nombreUsuarioLink10!=null){
         let rolUsuario10= localStorage.getItem('minijobs-rol-usuario')
-        if(rolUsuario10==null){
+        if(rolUsuario10!=null){
             if(rolUsuario10==5){
                 location.replace('{{route("home.administrador")}}')
             }else if(rolUsuario10==4){

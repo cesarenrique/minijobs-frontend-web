@@ -75,6 +75,64 @@
     height: 30px;
 }
 
+#tabla5{
+    width: 90%;
+    margin: 5%;
+}
+
+#tabla5  th{
+    width: 15%;
+    text-align: center;
+}
+
+#tabla5  td{
+    width: 15%;
+    text-align: center;
+}
+
+#tabla5  tr{
+    height: 30px;
+}
+
+
+
+#tabla6{
+    width: 90%;
+    margin: 5%;
+}
+
+#tabla6  th{
+    width: 15%;
+    text-align: center;
+}
+
+#tabla6  td{
+    width: 15%;
+    text-align: center;
+}
+
+#tabla6  tr{
+    height: 30px;
+}
+
+#tabla7{
+    width: 90%;
+    margin: 5%;
+}
+
+#tabla7  th{
+    width: 15%;
+    text-align: center;
+}
+
+#tabla7  td{
+    width: 15%;
+    text-align: center;
+}
+
+#tabla7  tr{
+    height: 30px;
+}
 /* MENU*/
 ul {
     list-style-type: none;

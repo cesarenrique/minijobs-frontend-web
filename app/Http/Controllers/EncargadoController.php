@@ -105,4 +105,43 @@ class EncargadoController extends Controller
         $urls["api"]=env('API_CONSUME').'/cargo/'.$idCargo;
         return view('encargado.cargo')->with('urls',$urls)->with('empresa_id',$idCargo);
     }
+
+    public function sectores(){
+        $urls=[];
+        $urls["api"]=env('API_CONSUME').'/sector';
+        $urls["amplia"]=url('/sector');
+        return view('encargado.sectores')->with('urls',$urls);
+    }
+
+
+    public function especializadas(){
+        $urls=[];
+        $urls["api"]=env('API_CONSUME').'/especializada';
+        $urls["amplia"]=url('/especializada');
+        return view('encargado.especializadas')->with('urls',$urls);
+    }
+
+
+    public function sectorEmpresas($id){
+        $urls=[];
+        $urls["api"]=env('API_CONSUME').'/sector/'.$id.'/empresas';
+        $urls["amplia"]=url('/empresa');
+        return view('encargado.sectorEmpresa')->with('urls',$urls);
+    }
+
+
+    public function especializadaEmpresas($id){
+        $urls=[];
+        $urls["api"]=env('API_CONSUME').'/especializada/'.$id.'/empresas';
+        $urls["amplia"]=url('/empresa');
+        return view('encargado.especializadaEmpresa')->with('urls',$urls);
+    }
+
+    public function sectorEspecialidades($id){
+        $urls=[];
+        $urls["api"]=env('API_CONSUME').'/sector/'.$id.'/especializadas';
+        $urls["amplia"]=url('/especializada');
+        return view('encargado.sectorEspecializadas')->with('urls',$urls);
+    }
+
 }

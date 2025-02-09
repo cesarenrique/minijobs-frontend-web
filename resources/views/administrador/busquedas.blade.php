@@ -14,6 +14,36 @@
             </a>
         </div>
         <div class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
+            <a href='{{route("sectores")}}'' style="height: 20rem;">
+            <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Sectores</h2>
+            </a>
+        </div>
+        <div class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
+            <a href='{{route("especializadas")}}'' style="height: 20rem;">
+            <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Especialidad</h2>
+            </a>
+        </div>
+        <div class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
+            <a href='{{route("tipoCarreras")}}'' style="height: 20rem;">
+            <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Tipo Carrera</h2>
+            </a>
+        </div>
+        <div class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
+            <a href='{{route("tipoRamaCarreras")}}'' style="height: 20rem;">
+            <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Tipo Especialidad Carrera</h2>
+            </a>
+        </div>
+        <div class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
+            <a href='{{route("carreras")}}'' style="height: 20rem;">
+            <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Carreras</h2>
+            </a>
+        </div>
+        <div class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
+            <a href='{{route("centros")}}'' style="height: 20rem;">
+            <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Centros Educativos</h2>
+            </a>
+        </div>
+        <div class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
             <a href='{{route("cargos")}}'' style="height: 20rem;">
             <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Cargos</h2>
             </a>

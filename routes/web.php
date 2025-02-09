@@ -29,6 +29,9 @@ Route::get('/usuario/rolchoice/reclutador/{id}',[UsuarioController::class,'rolch
 Route::get('/usuario/rolchoice/encargado/{id}',[UsuarioController::class,'rolchoiceEncargado']);
 Route::get('/usuario/rolchoice/administrador/{id}',[UsuarioController::class,'rolchoiceAdministrador']);
 
+Route::get('/user/anonimo',[UsuarioController::class,'anonimo'])->name('usuario.anonimo');
+Route::get('/user/{id}',[UsuarioController::class,'usuario']);
+
 Route::get('/encargado/{idEncargado}/empresa/{idEmpresa}/crearCargo',[EncargadoController::class,'crearCargo']);
 Route::get('/encargado/{idEncargado}/crearEmpresa',[EncargadoController::class,'crearEmpresa']);
 Route::get('/encargado/{idEncargado}/empresa',[EncargadoController::class,'empresas']);
@@ -45,6 +48,9 @@ Route::get('/anuncio/{idAnuncio}/alumnos',[ReclutadorController::class,'candidat
 Route::get('/reclutador/{idReclutador}/anuncios',[ReclutadorController::class,'misAnuncios']);
 Route::get('/reclutador/anuncio/{idAnuncio}/alumno',[ReclutadorController::class,'misAnuncioAlumno']);
 
+Route::get('/sector/{id}/empresas',[EncargadoController::class,'sectorEmpresas']);
+Route::get('/sector/{id}',[EncargadoController::class,'sectorEspecialidades']);
+Route::get('/especializada/{id}/empresas',[EncargadoController::class,'especializadaEmpresas']);
 
 Route::get('/alumno/{idAlumno}/anuncios',[AlumnoController::class,'anuncios']);
 Route::get('/alumno/{idAlumno}/anuncio/{idAnuncio}',[AlumnoController::class,'postularAlumnoAnuncio']);
@@ -59,11 +65,17 @@ Route::get('/empresa/{idEmpresa}',[EncargadoController::class,'empresa']);
 
 Route::get('/cargo/{idCargo}',[EncargadoController::class,'cargo']);
 
+Route::get('/academico/carrera/{id}',[AcademicoController::class,'carrera']);
+Route::get('/academico/centro/{id}',[AcademicoController::class,'centro']);
+Route::get('/academico/asignatura/{id}',[AcademicoController::class,'modelo']);
+Route::get('/academico/tipocarrera/{id}',[AcademicoController::class,'tipoCarrera']);
+Route::get('/academico/tiporamacarrera/{id}',[AcademicoController::class,'tipoRamaCarrera']);
+
 Route::get('/academico/crearModelo',[AcademicoController::class,'modelo']);
-
-
-Route::get('/user/anonimo',[UsuarioController::class,'anonimo'])->name('usuario.anonimo');
-Route::get('/user/{id}',[UsuarioController::class,'usuario']);
+Route::get('/academico/carrera',[AcademicoController::class,'carreras'])->name('carreras');
+Route::get('/academico/centro',[AcademicoController::class,'centros'])->name('centros');
+Route::get('/academico/tipocarrera',[AcademicoController::class,'tipoCarreras'])->name('tipoCarreras');
+Route::get('/academico/tiporamacarrera',[AcademicoController::class,'tipoRamaCarreras'])->name('tipoRamaCarreras');
 
 Route::get('/cargo',[EncargadoController::class,'cargos'])->name('cargos');
 Route::get('/anuncio',[ReclutadorController::class,'anuncios'])->name('anuncios');
@@ -74,6 +86,9 @@ Route::get('/reclutadores',[AdministradorController::class,'reclutadores'])->nam
 Route::get('/profesores',[AdministradorController::class,'profesores'])->name('profesores');
 Route::get('/alumnos',[AdministradorController::class,'alumnos'])->name('alumnos');
 Route::get('/busquedas',[AdministradorController::class,'busquedas'])->name('busquedas');
+Route::get('/sector',[EncargadoController::class,'sectores'])->name('sectores');
+Route::get('/especializada',[EncargadoController::class,'especializadas'])->name('especializadas');
+
 
 Route::get('/panelcontrol/reclutador',[PanelControlController::class,'panelcontrolReclutador'])->name('panelcontrol.reclutador');
 Route::get('/panelcontrol/encargado',[PanelControlController::class,'panelcontrolEncargado'])->name('panelcontrol.encargado');
