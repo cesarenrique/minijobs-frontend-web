@@ -12,7 +12,7 @@ class ReclutadorController extends Controller
         $urls=[];
         $urls["api"]=env('API_CONSUME').'/anuncio/'.$idAnuncio.'/complete';
         $urls["api2"]=env('API_CONSUME').'/candidato/'.$idAnuncio.'/usuarios';
-        $urls["user"]=url('/alumno');
+        $urls["user"]=url('/user');
         return view('reclutador.misAlumnos')->with('urls',$urls);
     }
 

@@ -11,6 +11,7 @@ use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PanelControlController;
 use App\Http\Controllers\AcademicoController;
+use App\Http\Controllers\SkillController;
 
 Route::get('/',[HomeController::class,'home'])->name("home");
 Route::get('/home/administrador',[HomeController::class,'homeAdministrador'])->name("home.administrador");
@@ -59,6 +60,10 @@ Route::get('/alumno/{idAlumno}/postulados',[AlumnoController::class,'postulados'
 Route::get('/anuncio/{idAnuncio}/usuarios',[ReclutadorController::class,'misAnuncioAlumno']);
 Route::get('/anuncio/{idAnuncio}',[ReclutadorController::class,'anuncio']);
 
+Route::get('/skill/{id}/usuarios',[SkillController::class,'skillUsuarios']);
+Route::get('/skill/{id}/anuncios',[SkillController::class,'skillAnuncios']);
+Route::get('/skill/{id}',[SkillController::class,'skill']);
+
 Route::get('/empresa/{idEmpresa}/anuncio',[EncargadoController::class,'anunciosEmpresa']);
 Route::get('/empresa/{idEmpresa}/cargo',[EncargadoController::class,'cargosEmpresa']);
 Route::get('/empresa/{idEmpresa}',[EncargadoController::class,'empresa']);
@@ -88,7 +93,7 @@ Route::get('/alumnos',[AdministradorController::class,'alumnos'])->name('alumnos
 Route::get('/busquedas',[AdministradorController::class,'busquedas'])->name('busquedas');
 Route::get('/sector',[EncargadoController::class,'sectores'])->name('sectores');
 Route::get('/especializada',[EncargadoController::class,'especializadas'])->name('especializadas');
-
+Route::get('/skill',[SkillController::class,'skills'])->name('skills');
 
 Route::get('/panelcontrol/reclutador',[PanelControlController::class,'panelcontrolReclutador'])->name('panelcontrol.reclutador');
 Route::get('/panelcontrol/encargado',[PanelControlController::class,'panelcontrolEncargado'])->name('panelcontrol.encargado');

@@ -15,7 +15,7 @@ class UsuarioController extends Controller
 
     public function usuario($id){
         $urls=[];
-        $urls["api"]=env('API_CONSUME').'/user/'.$id;
+        $urls["api"]=env('API_CONSUME').'/user/'.$id.'/complete';
         $urls["roles"]=url('/usuario/'.$id.'/rolchoice2');
         $urls["cambioRol"]=url('/usuario/'.$id.'/updateUltimoRol');
         $urls["encargado"]=url('/encargado/');

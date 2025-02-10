@@ -11,6 +11,9 @@
 <h2 class="text-center">Anuncio</h2>
 <table id="tabla3">
 </table>
+<h2 class="text-center">Skills</h2>
+<table id="tabla3">
+</table>
 <div id="boton-registro-container" class="" style="margin: 5%; width: 90%; display: none;">
     <button id="boton-registro" type="submit"  class="bg-slate-400" style="width:100%; margin: auto;  margin-top: 30px; padding-top: 10px; padding-bottom: 10px;" type="text" id="fusername" name="username" placeholder="Username">
         Postular
@@ -154,6 +157,38 @@
         elementos=node00
 
         document.getElementById('tabla3').appendChild(elementos)
+        node00=document.createElement("tr")
+        node01=document.createElement("th")
+        node01.appendChild(document.createTextNode("ID"))
+        node02=document.createElement("th")
+        node02.appendChild(document.createTextNode("TITULO"))
+        node03=document.createElement("th")
+        node03.appendChild(document.createTextNode("DESCRIPCION"))
+        node00.appendChild(node01)
+        node00.appendChild(node02)
+        node00.appendChild(node03)
+        elementos=node00
+
+        let array=data.data.skills
+
+        //console.log(array)
+
+        for(let i=0;i<array.length;i++){
+            document.getElementById('tabla4').appendChild(elementos)
+            node00=document.createElement("tr")
+            node01=document.createElement("td")
+            node01.appendChild(document.createTextNode(array[i].id))
+            node02=document.createElement("td")
+            node02.appendChild(document.createTextNode(array[i].skill))
+            node03=document.createElement("td")
+            node03.appendChild(document.createTextNode(array[i].descripcion))
+            node00.appendChild(node01)
+            node00.appendChild(node02)
+            node00.appendChild(node03)
+
+            elementos=node00
+        }
+        document.getElementById('tabla4').appendChild(elementos)
     }).catch(error => {
         console.error('Error', error);
     })
