@@ -1,51 +1,68 @@
 @extends('app')
 
 @section('content')
-<table id="tabla">
+<div id="titulo10">
+    <h2>Perfil Usuario</h2>
+</div>
+<table id="tabla10">
 </table>
-<h2 class="text-center">Roles</h2>
-<div class="text-center" id="usuario-roles">
+
+
+<div  id="usuario-roles">
+    <div class="perfil-usuario-titulo">
+        <h2>Roles</h2>
+    </div>
+</div>
+
+
+<div id="tabla11-container" style="width: 100%; display:none;">
+    <div class="perfil-usuario-titulo">
+        <h2>Skills</h2>
+    </div>
+    <table id="tabla11">
+    </table>
 
 </div>
-<table id="tabla4">
-</table>
+<div class="perfil-usuario-titulo">
+    <h2>Opciones</h2>
+</div>
 <div class="grid grid-cols-2 sm:grid-cols-3">
-    <div id="estadoAmistad" class="bg-indigo-200 text-center p-4 " style="height: 20rem; display: none;">
+    <div id="estadoAmistad" class="colorcito-opciones text-center p-4 " style="height: 20rem; display: none;">
         <a href="#" style="height: 20rem;">
         <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;"><span></span>&nbsp;Amistad</h2>
         </a>
     </div>
-    <div id="estadoSeguir" class="bg-indigo-200 text-center p-4 " style="height: 20rem; display: none;">
+    <div id="estadoSeguir" class="colorcito-opciones text-center p-4 " style="height: 20rem; display: none;">
         <a href="#" style="height: 20rem;">
         <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;"><span></span>&nbsp;Seguir</h2>
         </a>
     </div>
-    <div id="editarPerfil" class="bg-indigo-200 text-center p-4 " style="height: 20rem; display: none;">
+    <div id="editarPerfil" class="colorcito-opciones text-center p-4 " style="height: 20rem; display: none;">
         <a href='#' style="height: 20rem;">
         <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Editar</h2>
         </a>
     </div>
-    <div id="editarPagos" class="bg-indigo-200 text-center p-4 " style="height: 20rem; display: none;">
+    <div id="editarPagos" class="colorcito-opciones text-center p-4 " style="height: 20rem; display: none;">
         <a href='#' style="height: 20rem;">
         <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Pagos</h2>
         </a>
     </div>
-    <div id="editarRoles" class="bg-indigo-200 text-center p-4 " style="height: 20rem; display: none;">
+    <div id="editarRoles" class="colorcito-opciones text-center p-4 " style="height: 20rem; display: none;">
         <a href='{{$urls["roles"]}}' style="height: 20rem;">
         <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Añadir Roles</h2>
         </a>
     </div>
-    <div id="cambiarRol" class="bg-indigo-200 text-center p-4 " style="height: 20rem; display: none;">
+    <div id="cambiarRol" class="colorcito-opciones text-center p-4 " style="height: 20rem; display: none;">
         <a href='{{$urls["cambioRol"]}}' style="height: 20rem;">
         <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Cambiar Rol</h2>
         </a>
     </div>
-    <div id="login-perfil-link" class="bg-indigo-200 text-center p-4 " style="height: 20rem; display: none;">
+    <div id="login-perfil-link" class="colorcito-opciones text-center p-4 " style="height: 20rem; display: none;">
         <a href='#' style="height: 20rem;">
         <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Loguearse</h2>
         </a>
     </div>
-    <div id="registro-perfil-link" class="bg-indigo-200 text-center p-4 " style="height: 20rem; display: none; ">
+    <div id="registro-perfil-link" class="colorcito-opciones text-center p-4 " style="height: 20rem; display: none; ">
         <a href="{{route('registro')}}" style="height: 20rem;">
         <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Registrarse</h2>
         </a>
@@ -58,6 +75,7 @@
     let idUsuario3= localStorage.getItem('minijobs-id-usuario')
     let loginPerfilLink11=document.getElementById('login-perfil-link');
     let registroPerfilLink11=document.getElementById('registro-perfil-link');
+    let tabla11Container=document.getElementById('tabla11-container');
     if(nombreUsuario3!=null){
         usuarioLogueado=rolUsuario;
 
@@ -94,7 +112,7 @@
 
         //console.log(array)
 
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
         node00=document.createElement("tr")
         node01=document.createElement("td")
         node01.appendChild(document.createTextNode(elem.id))
@@ -112,7 +130,7 @@
         node00.appendChild(node04)
         node00.appendChild(node05)
         elementos=node00
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
 
         let crearEmpresa=document.getElementById("crearEmpresa");
         let listarEmpresas=document.getElementById("listarEmpresas");
@@ -141,38 +159,79 @@
             }
         }
         let usuarioRoles=document.getElementById("usuario-roles");
-
+        let entro=0;
         if(data.data.administrador==1){
             div05=document.createElement("div")
-            div05.appendChild(document.createTextNode("administrador"))
+            div05.classList.add('perfil-usuario-rol10');
+            div06=document.createElement("h2")
+            div06.appendChild(document.createTextNode("Administrador"))
+            div05.appendChild(div06)
             usuarioRoles.appendChild(div05)
+            entro=1
         }
         if(data.data.encargado==1){
             div05=document.createElement("div")
-            div05.appendChild(document.createTextNode("encargado"))
+            div05.classList.add('perfil-usuario-rol10');
+            div06=document.createElement("h2")
+            div06.appendChild(document.createTextNode("Encargado"))
+            div05.appendChild(div06)
             usuarioRoles.appendChild(div05)
+            entro=1
         }
         if(data.data.reclutador==1){
             div05=document.createElement("div")
-            div05.appendChild(document.createTextNode("reclutador"))
+            div05.classList.add('perfil-usuario-rol10');
+            div06=document.createElement("h2")
+            div06.appendChild(document.createTextNode("Reclutador"))
+            div05.appendChild(div06)
             usuarioRoles.appendChild(div05)
+            entro=1
         }
         if(data.data.alumno==1){
             div05=document.createElement("div")
-            div05.appendChild(document.createTextNode("alumno"))
+            div05.classList.add('perfil-usuario-rol10');
+            div06=document.createElement("h2")
+            div06.appendChild(document.createTextNode("Alumno"))
+            div05.appendChild(div06)
             usuarioRoles.appendChild(div05)
+            entro=1
         }
         if(data.data.profesor==1){
             div05=document.createElement("div")
-            div05.appendChild(document.createTextNode("profesor"))
+            div05.classList.add('perfil-usuario-rol10');
+            div06=document.createElement("h2")
+            div06.appendChild(document.createTextNode("Profesor"))
+            div05.appendChild(div06)
             usuarioRoles.appendChild(div05)
+            entro=1
+        }
+        if(data.data.mentor==1){
+            div05=document.createElement("div")
+            div05.classList.add('perfil-usuario-rol10');
+            div06=document.createElement("h2")
+            div06.appendChild(document.createTextNode("Mentor"))
+            div05.appendChild(div06)
+            usuarioRoles.appendChild(div05)
+            entro=1
+        }
+        if(entro==0){
+            div05=document.createElement("div")
+            div05.classList.add('perfil-usuario-rol10');
+            div06=document.createElement("h2")
+            div06.appendChild(document.createTextNode("Sin Rol"))
+            div05.appendChild(div06)
+            usuarioRoles.appendChild(div05)
+
         }
         node00=document.createElement("tr")
         node01=document.createElement("th")
+        node01.classList.add('tabla11-primero');
         node01.appendChild(document.createTextNode("ID"))
         node02=document.createElement("th")
+        node02.classList.add('tabla11-segundo');
         node02.appendChild(document.createTextNode("TITULO"))
         node03=document.createElement("th")
+        node03.classList.add('tabla11-tercero');
         node03.appendChild(document.createTextNode("DESCRIPCION"))
         node00.appendChild(node01)
         node00.appendChild(node02)
@@ -182,23 +241,31 @@
         let array=data.data.skills
 
         //console.log(array)
-
+        entro=0;
         for(let i=0;i<array.length;i++){
-            document.getElementById('tabla4').appendChild(elementos)
+            if(entro==0){
+                tabla11Container.style.display="block";
+                entro=1;
+            }
+            document.getElementById('tabla11').appendChild(elementos)
             node00=document.createElement("tr")
             node01=document.createElement("td")
+            node01.classList.add('tabla11-primero');
             node01.appendChild(document.createTextNode(array[i].id))
             node02=document.createElement("td")
+            node02.classList.add('tabla11-segundo');
             node02.appendChild(document.createTextNode(array[i].skill))
             node03=document.createElement("td")
+            node03.classList.add('tabla11-tercero');
             node03.appendChild(document.createTextNode(array[i].descripcion))
             node00.appendChild(node01)
             node00.appendChild(node02)
             node00.appendChild(node03)
 
             elementos=node00
+
         }
-        document.getElementById('tabla4').appendChild(elementos)
+        document.getElementById('tabla11').appendChild(elementos)
     }).catch(error => {
         console.error('Error', error);
     })

@@ -1,7 +1,15 @@
 @extends('app')
 
 @section('content')
-<table id="tabla" >
+<div class="perfil-usuario-titulo">
+    <h2>Empresa</h2>
+</div>
+<table id="tabla14">
+</table>
+<div class="perfil-usuario-titulo">
+    <h2>Cargos Empresariales de Esta Empresa</h2>
+</div>
+<table id="tabla10" >
 </table>
 <script>
 
@@ -37,7 +45,7 @@
 
         console.log(elem)
 
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla14').appendChild(elementos)
         node00=document.createElement("tr")
         node01=document.createElement("td")
         node01.appendChild(document.createTextNode(elem.id))
@@ -50,7 +58,7 @@
         node05=document.createElement("td")
         node05.appendChild(document.createTextNode(elem.email))
         node06=document.createElement("td")
-        subnode01=document.createTextNode("VER")
+        subnode01=document.createTextNode("VER EMPRESA")
         subnode02=document.createElement("a")
         subnode02.appendChild(subnode01)
         referencia='{{$urls["empresa"]}}'+'/'+elem.id
@@ -64,16 +72,12 @@
         node00.appendChild(node06)
         elementos=node00
 
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla14').appendChild(elementos)
 
     }).catch(error => {
         console.error('Error', error);
     })
-</script>
 
-<table id="tabla2" >
-</table>
-<script>
     fetch('{{$urls["api2"]}}').then(response =>{
         if(!response.ok){
             throw new Error('API no responde');
@@ -101,7 +105,7 @@
         //console.log(array)
 
         for(let i=0;i<array.length;i++){
-            document.getElementById('tabla2').appendChild(elementos)
+            document.getElementById('tabla10').appendChild(elementos)
             node00=document.createElement("tr")
             node01=document.createElement("td")
             node01.appendChild(document.createTextNode(array[i].id))
@@ -110,7 +114,7 @@
             node03=document.createElement("td")
             node03.appendChild(document.createTextNode(array[i].descripcion))
             node06=document.createElement("td")
-            subnode01=document.createTextNode("VER")
+            subnode01=document.createTextNode("VER CARGO")
             subnode02=document.createElement("a")
             subnode02.appendChild(subnode01)
             referencia='{{$urls["cargo"]}}'+'/'+array[i].id
@@ -122,7 +126,7 @@
             node00.appendChild(node06)
             elementos=node00
         }
-        document.getElementById('tabla2').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
     }).catch(error => {
         console.error('Error', error);
     })

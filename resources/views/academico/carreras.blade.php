@@ -1,7 +1,10 @@
 @extends('app')
 
 @section('content')
-<table id="tabla">
+<div class="perfil-usuario-titulo">
+    <h2>Carreras Profesionales</h2>
+</div>
+<table id="tabla10">
 </table>
 <script>
 
@@ -31,14 +34,14 @@
         //console.log(array)
 
         for(let i=0;i<array.length;i++){
-            document.getElementById('tabla').appendChild(elementos)
+            document.getElementById('tabla10').appendChild(elementos)
             node00=document.createElement("tr")
             node01=document.createElement("td")
             node01.appendChild(document.createTextNode(array[i].id))
             node02=document.createElement("td")
             node02.appendChild(document.createTextNode(array[i].nombre))
             node06=document.createElement("td")
-            subnode01=document.createTextNode("VER")
+            subnode01=document.createTextNode("VER CARRERA")
             subnode02=document.createElement("a")
             subnode02.appendChild(subnode01)
             referencia='{{$urls["rama"]}}'+'/'+array[i].id
@@ -50,7 +53,7 @@
 
             elementos=node00
         }
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
     }).catch(error => {
         console.error('Error', error);
     })

@@ -1,16 +1,12 @@
 @extends('app')
 
 @section('content')
-<div class="perfil-usuario-titulo">
-    <h2>Empresa</h2>
-</div>
-<table id="tabla14">
+<table id="tabla">
 </table>
-<div class="perfil-usuario-titulo">
-    <h2> Anuncios</h2>
-</div>
-<table id="tabla10" >
+<h2 class="text-center">Evaluaciones</h2>
+<table id="tabla4">
 </table>
+
 <script>
 
     fetch('{{$urls["api"]}}').then(response =>{
@@ -19,42 +15,39 @@
         }
         return response.json();
     }).then(data =>{
-
-
-
         node00=document.createElement("tr")
         node01=document.createElement("th")
         node01.appendChild(document.createTextNode("ID"))
         node02=document.createElement("th")
-        node02.appendChild(document.createTextNode("NAME"))
+        node02.appendChild(document.createTextNode("USERNAME"))
         node03=document.createElement("th")
-        node03.appendChild(document.createTextNode("NIF"))
+        node03.appendChild(document.createTextNode("NAME"))
         node04=document.createElement("th")
-        node04.appendChild(document.createTextNode("TAMAÑO"))
+        node04.appendChild(document.createTextNode("NIF"))
         node05=document.createElement("th")
         node05.appendChild(document.createTextNode("EMAIL"))
+
         node00.appendChild(node01)
         node00.appendChild(node02)
         node00.appendChild(node03)
         node00.appendChild(node04)
         node00.appendChild(node05)
-
         let elementos=node00
 
-        let elem=data.data.empresa
+        let elem=data.data.user
 
-        console.log(elem)
+        //console.log(array)
 
-        document.getElementById('tabla14').appendChild(elementos)
+        document.getElementById('tabla').appendChild(elementos)
         node00=document.createElement("tr")
         node01=document.createElement("td")
         node01.appendChild(document.createTextNode(elem.id))
         node02=document.createElement("td")
-        node02.appendChild(document.createTextNode(elem.nombre))
+        node02.appendChild(document.createTextNode(elem.username))
         node03=document.createElement("td")
-        node03.appendChild(document.createTextNode(elem.NIF))
+        node03.appendChild(document.createTextNode(elem.name))
         node04=document.createElement("td")
-        node04.appendChild(document.createTextNode(elem.tamanyo))
+        node04.appendChild(document.createTextNode(elem.NIF))
         node05=document.createElement("td")
         node05.appendChild(document.createTextNode(elem.email))
         node00.appendChild(node01)
@@ -63,73 +56,58 @@
         node00.appendChild(node04)
         node00.appendChild(node05)
         elementos=node00
-
-        document.getElementById('tabla14').appendChild(elementos)
-
-    }).catch(error => {
-        console.error('Error', error);
-    })
-
-    fetch('{{$urls["api3"]}}').then(response =>{
-        if(!response.ok){
-            throw new Error('API no responde');
-        }
-        return response.json();
-    }).then(data =>{
-
-
+        document.getElementById('tabla').appendChild(elementos)
 
         node00=document.createElement("tr")
         node01=document.createElement("th")
         node01.appendChild(document.createTextNode("ID"))
         node02=document.createElement("th")
-        node02.appendChild(document.createTextNode("TITULO"))
+        node02.appendChild(document.createTextNode("CARRERA"))
         node03=document.createElement("th")
-        node03.appendChild(document.createTextNode("DESCRIPCION"))
+        node03.appendChild(document.createTextNode("NOMBRE"))
         node04=document.createElement("th")
-        node04.appendChild(document.createTextNode("ESTADO"))
+        node04.appendChild(document.createTextNode("TIPO"))
         node05=document.createElement("th")
-        node05.appendChild(document.createTextNode("INICIO"))
+        node05.appendChild(document.createTextNode("NOTA"))
+        node06=document.createElement("th")
+        node06.appendChild(document.createTextNode("VER"))
         node00.appendChild(node01)
         node00.appendChild(node02)
         node00.appendChild(node03)
         node00.appendChild(node04)
         node00.appendChild(node05)
+        node00.appendChild(node06)
         elementos=node00
 
-        array=data.data.anuncios
-
+        let array=data.data.evaluaciones
+        let array2=data.data.asignaturaCarreras
+        let array3=data.data.asignaturas
+        let array4=data.data.carreras
         //console.log(array)
 
         for(let i=0;i<array.length;i++){
-            document.getElementById('tabla10').appendChild(elementos)
+            document.getElementById('tabla4').appendChild(elementos)
             node00=document.createElement("tr")
             node01=document.createElement("td")
             node01.appendChild(document.createTextNode(array[i].id))
             node02=document.createElement("td")
-            node02.appendChild(document.createTextNode(array[i].titulo))
+            node02.appendChild(document.createTextNode(array4[i].nombre))
             node03=document.createElement("td")
-            node03.appendChild(document.createTextNode(array[i].descripcion))
+            node03.appendChild(document.createTextNode(array3[i].nombre))
             node04=document.createElement("td")
-            node04.appendChild(document.createTextNode(array[i].estado))
+            node04.appendChild(document.createTextNode(array2[i].tipo))
             node05=document.createElement("td")
-            node05.appendChild(document.createTextNode(array[i].inicio))
-            node06=document.createElement("td")
-            subnode01=document.createTextNode("VER ANUNCIO")
-            subnode02=document.createElement("a")
-            subnode02.appendChild(subnode01)
-            referencia='{{$urls["anuncio"]}}'+'/'+array[i].id
-            subnode02.setAttribute('href',referencia)
-            node06.appendChild(subnode02)
+            node05.appendChild(document.createTextNode(array[i].nota))
             node00.appendChild(node01)
             node00.appendChild(node02)
             node00.appendChild(node03)
             node00.appendChild(node04)
             node00.appendChild(node05)
-            node00.appendChild(node06)
+
+
             elementos=node00
         }
-        document.getElementById('tabla10').appendChild(elementos)
+        document.getElementById('tabla4').appendChild(elementos)
     }).catch(error => {
         console.error('Error', error);
     })

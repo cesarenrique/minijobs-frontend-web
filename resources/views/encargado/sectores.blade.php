@@ -1,9 +1,10 @@
 @extends('app')
 
 @section('content')
-<table id="tabla">
-</table>
-<table id="tabla3">
+<div class="perfil-usuario-titulo">
+    <h2>Sectores Empresariales</h2>
+</div>
+<table id="tabla10">
 </table>
 <script>
 
@@ -22,9 +23,9 @@
         node02=document.createElement("th")
         node02.appendChild(document.createTextNode("NOMBRE"))
         node03=document.createElement("th")
-        node03.appendChild(document.createTextNode("VER"))
+        node03.appendChild(document.createTextNode("VER ESPECIALIZACION"))
         node04=document.createElement("th")
-        node04.appendChild(document.createTextNode("VER"))
+        node04.appendChild(document.createTextNode("VER EMPRESAS"))
         node00.appendChild(node01)
         node00.appendChild(node02)
         node00.appendChild(node03)
@@ -36,21 +37,21 @@
         //console.log(array)
 
         for(let i=0;i<array.length;i++){
-            document.getElementById('tabla3').appendChild(elementos)
+            document.getElementById('tabla10').appendChild(elementos)
             node00=document.createElement("tr")
             node01=document.createElement("td")
             node01.appendChild(document.createTextNode(array[i].id))
             node02=document.createElement("td")
             node02.appendChild(document.createTextNode(array[i].nombre))
             node06=document.createElement("td")
-            subnode01=document.createTextNode("VER")
+            subnode01=document.createTextNode("ESPECIALIZACION")
             subnode02=document.createElement("a")
             subnode02.appendChild(subnode01)
             referencia='{{$urls["amplia"]}}'+'/'+array[i].id
             subnode02.setAttribute('href',referencia)
             node06.appendChild(subnode02)
             node07=document.createElement("td")
-            subnode03=document.createTextNode("VER")
+            subnode03=document.createTextNode("EMPRESAS")
             subnode04=document.createElement("a")
             subnode04.appendChild(subnode03)
             referencia='{{$urls["amplia"]}}'+'/'+array[i].id+'/empresas'
@@ -62,7 +63,7 @@
             node00.appendChild(node07)
             elementos=node00
         }
-        document.getElementById('tabla3').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
     }).catch(error => {
         console.error('Error', error);
     })

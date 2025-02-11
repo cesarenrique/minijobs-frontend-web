@@ -3,7 +3,10 @@
 @section('content')
 
 
-<table id="tabla3" >
+<div id="titulo10">
+    <h2>Perfiles Profesionales</h2>
+</div>
+<table id="tabla10">
 </table>
 <script>
     fetch('{{$urls["api3"]}}').then(response =>{
@@ -32,7 +35,7 @@
         //console.log(array)
 
         for(let i=0;i<array.length;i++){
-            document.getElementById('tabla3').appendChild(elementos)
+            document.getElementById('tabla10').appendChild(elementos)
             node00=document.createElement("tr")
             node01=document.createElement("td")
             node01.appendChild(document.createTextNode(array[i].id))
@@ -41,7 +44,7 @@
             node03=document.createElement("td")
             node03.appendChild(document.createTextNode(array[i].descripcion))
             node06=document.createElement("td")
-            subnode01=document.createTextNode("VER")
+            subnode01=document.createTextNode("VER CARGO")
             subnode02=document.createElement("a")
             subnode02.appendChild(subnode01)
             referencia='{{$urls["cargo"]}}'+'/'+array[i].id
@@ -53,7 +56,7 @@
             node00.appendChild(node06)
             elementos=node00
         }
-        document.getElementById('tabla3').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
     }).catch(error => {
         console.error('Error', error);
     })

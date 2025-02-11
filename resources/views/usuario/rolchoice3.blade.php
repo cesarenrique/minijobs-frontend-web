@@ -5,31 +5,31 @@
 </table>
 <h2>Escoge tu Rol</h2>
 <div class="grid grid-cols-2 sm:grid-cols-4">
-    <div id="rolEstudianteContainer" class="bg-indigo-200 text-center p-4 " style="height: 15rem;  display:none; ">
+    <div id="rolEstudianteContainer" class="colorcito-opciones text-center p-4 " style="height: 15rem;  display:none; ">
         <a id="rolEstudiante" href='#' style="height: 15rem;">
             <h2 id="rolEstudianteh2"></h2>
          <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Estudiante</h2>
         </a>
     </div>
-    <div id="rolProfesorContainer" class="bg-indigo-200 text-center p-4 " style="height: 15rem;  display:none; ">
+    <div id="rolProfesorContainer" class="colorcito-opciones text-center p-4 " style="height: 15rem;  display:none; ">
         <a id="rolProfesor" href='#' style="height: 15rem;">
             <h2 id="rolProfesorh2"></h2>
             <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Profesor</h2>
         </a>
     </div>
-    <div id="rolReclutadorContainer" class="bg-indigo-200 text-center p-4 " style="height: 15rem;  display:none; ">
+    <div id="rolReclutadorContainer" class="colorcito-opciones text-center p-4 " style="height: 15rem;  display:none; ">
         <a id="rolReclutador" href='#' style="height: 15rem;">
             <h2 id="rolReclutadorh2"></h2>
             <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Reclutador</h2>
         </a>
     </div>
-    <div id="rolEncargadoContainer" class="bg-indigo-200 text-center p-4 " style="height: 15rem;  display:none; ">
+    <div id="rolEncargadoContainer" class="colorcito-opciones text-center p-4 " style="height: 15rem;  display:none; ">
         <a id="rolEncargado" href='#' style="height: 15rem;">
             <h2 id="rolEncargadoh2"></h2>
             <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Empresario</h2>
         </a>
     </div>
-    <div id="rolAdministradorContainer" class="bg-indigo-200 text-center p-4 " style="height: 15rem; display:none; ">
+    <div id="rolAdministradorContainer" class="colorcito-opciones text-center p-4 " style="height: 15rem; display:none; ">
         <a id="rolAdministrador" href='#' style="height: 15rem;">
             <h2 id="rolAdministradorh2"></h2>
             <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Administrador</h2>

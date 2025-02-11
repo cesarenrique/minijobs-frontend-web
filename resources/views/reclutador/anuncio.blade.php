@@ -2,18 +2,46 @@
 
 @section('content')
 
-<h2 class="text-center">Empresa</h2>
-<table id="tabla">
+<div class="perfil-usuario-titulo">
+    <h2>Empresa</h2>
+</div>
+<table id="tabla14">
 </table>
-<h2 class="text-center">Cargo</h2>
-<table id="tabla2">
+<div class="perfil-usuario-titulo">
+    <h2>Cargo</h2>
+</div>
+<table id="tabla10">
 </table>
-<h2 class="text-center">Anuncio</h2>
-<table id="tabla3">
+<div class="perfil-usuario-titulo">
+    <h2>Anuncio</h2>
+</div>
+<table id="tabla15">
 </table>
-<h2 class="text-center">Skills</h2>
-<table id="tabla4">
+<div class="perfil-usuario-titulo">
+    <h2>Skills</h2>
+</div>
+<table id="tabla11">
 </table>
+<div class="perfil-usuario-titulo">
+    <h2>Opciones</h2>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3">
+    <div class="colorcito-opciones text-center p-4 " style="height: 20rem;">
+        <a href='#' style="height: 20rem;">
+        <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Postular</h2>
+        </a>
+    </div>
+    <div class="colorcito-opciones text-center p-4 " style="height: 20rem;">
+        <a href='#' style="height: 20rem;">
+        <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Anuncios Misma Empresa</h2>
+        </a>
+    </div>
+    <div class="colorcito-opciones text-center p-4 " style="height: 20rem;">
+        <a href='#' style="height: 20rem;">
+        <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Anuncios Mismo Cargo</h2>
+        </a>
+    </div>
+</div>
 <script>
 
     fetch('{{$urls["api"]}}').then(response =>{
@@ -43,7 +71,7 @@
         node00.appendChild(node05)
 
         let elementos=node00
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla14').appendChild(elementos)
 
         let elem=data.data.empresa
 
@@ -68,7 +96,7 @@
         node00.appendChild(node05)
         elementos=node00
 
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla14').appendChild(elementos)
 
         elem=data.data.cargo
 
@@ -90,7 +118,7 @@
 
         elementos=node00
 
-        document.getElementById('tabla2').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
 
         node00=document.createElement("tr")
         node01=document.createElement("td")
@@ -105,7 +133,7 @@
 
         elementos=node00
 
-        document.getElementById('tabla2').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
 
         node00=document.createElement("tr")
         node01=document.createElement("th")
@@ -126,7 +154,7 @@
 
         elementos=node00
 
-        document.getElementById('tabla3').appendChild(elementos)
+        document.getElementById('tabla15').appendChild(elementos)
 
         elem=data.data.anuncio
 
@@ -151,7 +179,7 @@
         node00.appendChild(node05)
         elementos=node00
 
-        document.getElementById('tabla3').appendChild(elementos)
+        document.getElementById('tabla15').appendChild(elementos)
 
 
         node00=document.createElement("tr")
@@ -171,7 +199,7 @@
         //console.log(array)
 
         for(let i=0;i<array.length;i++){
-            document.getElementById('tabla4').appendChild(elementos)
+            document.getElementById('tabla11').appendChild(elementos)
             node00=document.createElement("tr")
             node01=document.createElement("td")
             node01.appendChild(document.createTextNode(array[i].id))
@@ -185,27 +213,11 @@
 
             elementos=node00
         }
-        document.getElementById('tabla4').appendChild(elementos)
+        document.getElementById('tabla11').appendChild(elementos)
     }).catch(error => {
         console.error('Error', error);
     })
 </script>
 
-<div class="grid grid-cols-2 sm:grid-cols-3">
-    <div class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
-        <a href='#' style="height: 20rem;">
-        <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Postular</h2>
-        </a>
-    </div>
-    <div class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
-        <a href='#' style="height: 20rem;">
-        <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Anuncios Misma Empresa</h2>
-        </a>
-    </div>
-    <div class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
-        <a href='#' style="height: 20rem;">
-        <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Anuncios Mismo Cargo</h2>
-        </a>
-    </div>
-</div>
+
 @endsection

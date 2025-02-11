@@ -3,12 +3,12 @@
 @section('content')
 <div class="w-100">
     <div class="grid grid-cols-2 sm:grid-cols-3">
-        <div  id="postulados" class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
+        <div  id="postulados" class="colorcito-opciones text-center p-4 " style="height: 20rem;">
             <a id="postuladosA" href='#' style="height: 20rem;">
             <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Mis postulaciones</h2>
             </a>
         </div>
-        <div id="listarAnuncio" class="bg-indigo-200 text-center p-4 " style="height: 20rem; ">
+        <div id="listarAnuncio" class="colorcito-opciones text-center p-4 " style="height: 20rem; ">
             <a id="listarAnuncioA" href='#' style="height: 20rem;">
             <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Listar Anuncios</h2>
             </a>

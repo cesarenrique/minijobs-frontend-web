@@ -1,17 +1,21 @@
 @extends('app')
 
 @section('content')
-<table id="tabla">
+<div class="perfil-usuario-titulo">
+    <h2>Skills</h2>
+</div>
+<table id="tabla11">
 </table>
-
-
+<div class="perfil-usuario-titulo">
+    <h2>Opciones</h2>
+</div>
 <div class="grid grid-cols-2 sm:grid-cols-3">
-    <div class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
+    <div class="colorcito-opciones text-center p-4 " style="height: 20rem;">
         <a id="buscar-anuncios-skill" href="#" style="height: 20rem;">
         <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;"><span></span>&nbsp;Buscar Anuncio con este skill</h2>
         </a>
     </div>
-    <div  class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
+    <div  class="colorcito-opciones text-center p-4 " style="height: 20rem;">
         <a id="buscar-usuarios-skill" href="#" style="height: 20rem;">
         <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;"><span></span>&nbsp;Buscar Usuario con este skill</h2>
         </a>
@@ -47,7 +51,7 @@
 
         //console.log(array)
 
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla11').appendChild(elementos)
         node00=document.createElement("tr")
         node01=document.createElement("td")
         node01.appendChild(document.createTextNode(elem.id))
@@ -61,7 +65,7 @@
         node00.appendChild(node03)
 
         elementos=node00
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla11').appendChild(elementos)
 
 
 

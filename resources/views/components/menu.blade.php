@@ -1,10 +1,7 @@
 <div>
-    <div style="width:90%; margin:5%;">
-        <ul>
+    <div style="width:100%; ">
+        <ul style="width:100%; ">
             <li><a id="home-link-a" class="active" href="{{route("home")}}">Home</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#about">About</a></li>
             <li id="login-link" style="float: right;"><a href="{{route('login')}}">Login</a></li>
             <li id="registrar-link"  style="float: right;"><a href="{{route('registro')}}">Registro</a></li>
             <li id="nombre-Usuario-link" style="float: right;"><a  id="nombre-Usuario-link-a" href="#about">Username</a></li>

@@ -1,11 +1,15 @@
 @extends('app')
 
 @section('content')
-<h2 class="text-center">Usuario</h2>
-<table id="tabla">
+<div class="perfil-usuario-titulo">
+    <h2>Usuario</h2>
+</div>
+<table id="tabla10">
 </table>
-<h2 class="text-center">Empresas del Usuario</h2>
-<table id="tabla4">
+<div class="perfil-usuario-titulo">
+    <h2>Empresas del Usuario</h2>
+</div>
+<table id="tabla14">
 </table>
 <script>
 
@@ -39,7 +43,7 @@
 
         //console.log(array)
 
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
         node00=document.createElement("tr")
         node01=document.createElement("td")
         node01.appendChild(document.createTextNode(elem.id))
@@ -57,7 +61,7 @@
         node00.appendChild(node04)
         node00.appendChild(node05)
         elementos=node00
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
     }).catch(error => {
         console.error('Error', error);
     })
@@ -95,7 +99,7 @@
         //console.log(array)
 
         for(let i=0;i<array.length;i++){
-            document.getElementById('tabla4').appendChild(elementos)
+            document.getElementById('tabla14').appendChild(elementos)
             node00=document.createElement("tr")
             node00.id="referenciar"+i;
             node01=document.createElement("td")
@@ -109,7 +113,7 @@
             node05=document.createElement("td")
             node05.appendChild(document.createTextNode(array[i].email))
             node06=document.createElement("td")
-            subnode01=document.createTextNode("VER")
+            subnode01=document.createTextNode("VER EMPRESA")
             subnode02=document.createElement("a")
             subnode02.appendChild(subnode01)
             referencia='{{$urls["empresa"]}}'+'/encargado/'+'{{$encargado_id}}'+'/empresa/'+array[i].id
@@ -123,7 +127,7 @@
             node00.appendChild(node06)
             elementos=node00
         }
-        document.getElementById('tabla4').appendChild(elementos)
+        document.getElementById('tabla14').appendChild(elementos)
 
     }).catch(error => {
         console.error('Error', error);

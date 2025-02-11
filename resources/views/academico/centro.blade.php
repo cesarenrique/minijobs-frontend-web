@@ -1,9 +1,15 @@
 @extends('app')
 
 @section('content')
-<table id="tabla">
+<div id="titulo10">
+    <h2>Perfiles Profesionales</h2>
+</div>
+<table id="tabla10">
 </table>
-<table id="tabla3">
+<div class="perfil-usuario-titulo">
+    <h2>Carreras Profesionales</h2>
+</div>
+<table id="tabla12">
 </table>
 <script>
 
@@ -30,7 +36,7 @@
         //console.log(array)
 
 
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
         node00=document.createElement("tr")
         node01=document.createElement("td")
         node01.appendChild(document.createTextNode(elem.id))
@@ -43,7 +49,7 @@
 
         elementos=node00
 
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
 
         node00=document.createElement("tr")
         node01=document.createElement("th")
@@ -62,14 +68,14 @@
         //console.log(array)
 
         for(let i=0;i<array.length;i++){
-            document.getElementById('tabla3').appendChild(elementos)
+            document.getElementById('tabla12').appendChild(elementos)
             node00=document.createElement("tr")
             node01=document.createElement("td")
             node01.appendChild(document.createTextNode(array[i].id))
             node02=document.createElement("td")
             node02.appendChild(document.createTextNode(array[i].nombre))
             node06=document.createElement("td")
-            subnode01=document.createTextNode("VER")
+            subnode01=document.createTextNode("VER CARRERA")
             subnode02=document.createElement("a")
             subnode02.appendChild(subnode01)
             referencia='{{$urls["carrera"]}}'+'/'+array[i].id
@@ -81,7 +87,7 @@
 
             elementos=node00
         }
-        document.getElementById('tabla3').appendChild(elementos)
+        document.getElementById('tabla12').appendChild(elementos)
     }).catch(error => {
         console.error('Error', error);
     })

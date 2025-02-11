@@ -1,15 +1,24 @@
 @extends('app')
 
 @section('content')
-<h2 class="text-center">Usuario</h2>
-<table id="tabla">
+<div class="perfil-usuario-titulo">
+    <h2>Usuario</h2>
+</div>
+<table id="tabla10">
 </table>
-<h2 class="text-center">Empresa del Usuario</h2>
-<table id="tabla4">
+<div class="perfil-usuario-titulo">
+    <h2>Empresa a Vincular</h2>
+</div>
+<table id="tabla14">
 </table>
-<h2 class="text-center">Cargo a Vincular</h2>
-<table id="tabla2">
+<div class="perfil-usuario-titulo">
+    <h2>Cargo a Vincular</h2>
+</div>
+<table id="tabla12">
 </table>
+<div class="perfil-usuario-titulo">
+    <h2>Opciones</h2>
+</div>
 <div class="" style="margin: 5%; width: 90%;">
     <button id="boton-registro2" type="submit"  class="bg-slate-400" style="width:100%; margin: auto;  margin-top: 30px; padding-top: 10px; padding-bottom: 10px;" type="text" id="fusername" name="username" placeholder="Username">
         Vincular Empresa
@@ -46,7 +55,7 @@
 
         //console.log(array)
 
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
         node00=document.createElement("tr")
         node01=document.createElement("td")
         node01.appendChild(document.createTextNode(elem.id))
@@ -64,7 +73,7 @@
         node00.appendChild(node04)
         node00.appendChild(node05)
         elementos=node00
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
     }).catch(error => {
         console.error('Error', error);
     })
@@ -101,7 +110,7 @@
 
         console.log(elem)
 
-        document.getElementById('tabla4').appendChild(elementos)
+        document.getElementById('tabla14').appendChild(elementos)
         node00=document.createElement("tr")
         node01=document.createElement("td")
         node01.appendChild(document.createTextNode(elem.id))
@@ -120,7 +129,7 @@
         node00.appendChild(node05)
         elementos=node00
 
-        document.getElementById('tabla4').appendChild(elementos)
+        document.getElementById('tabla14').appendChild(elementos)
 
     }).catch(error => {
         console.error('Error', error);
@@ -153,7 +162,7 @@
 
         elementos=node00
 
-        document.getElementById('tabla2').appendChild(elementos)
+        document.getElementById('tabla12').appendChild(elementos)
 
         node00=document.createElement("tr")
         node01=document.createElement("td")
@@ -168,7 +177,7 @@
 
         elementos=node00
 
-        document.getElementById('tabla2').appendChild(elementos)
+        document.getElementById('tabla12').appendChild(elementos)
 
 
     }).catch(error => {
@@ -181,7 +190,7 @@
         let formData = new FormData()
         formData.append('cargo_id',"{{$cargo_id}}")
         formData.append('empresa_id',"{{$empresa_id}}")
-
+        formData.append('descripcion',"Necesitamos este empleado")
         fetch('{{$urls["api4"]}}',{
             method: "POST",
             body: formData

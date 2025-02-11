@@ -3,17 +3,17 @@
 @section('content')
 <div class="w-100">
     <div class="grid grid-cols-2 sm:grid-cols-3">
-        <div class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
+        <div class="colorcito-opciones text-center p-4 " style="height: 20rem;">
             <a id="crearEmpresaA" href='#' style="height: 20rem;">
             <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Crear</h2>
             </a>
         </div>
-        <div id="listarEmpresas" class="bg-indigo-200 text-center p-4 " style="height: 20rem; ">
+        <div id="listarEmpresas" class="colorcito-opciones text-center p-4 " style="height: 20rem; ">
             <a id="listarEmpresasA" href='#' style="height: 20rem;">
             <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Listar Empresas</h2>
             </a>
         </div>
-        <div id="listarCargos" class="bg-indigo-200 text-center p-4 " style="height: 20rem; ">
+        <div id="listarCargos" class="colorcito-opciones text-center p-4 " style="height: 20rem; ">
             <a href='#' style="height: 20rem;">
             <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Listar Cargos</h2>
             </a>

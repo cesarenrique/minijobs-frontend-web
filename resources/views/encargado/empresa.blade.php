@@ -2,9 +2,23 @@
 
 @section('content')
 
-<h2 class="text-center">Empresas del Usuario</h2>
-<table id="tabla4">
+<div class="perfil-usuario-titulo">
+    <h2>Empresa</h2>
+</div>
+<table id="tabla10">
 </table>
+<div class="grid grid-cols-2 sm:grid-cols-3">
+    <div class="colorcito-opciones text-center p-4 " style="height: 20rem;">
+        <a href='{{$urls["cargos"]}}' style="height: 20rem;">
+        <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Cargos</h2>
+        </a>
+    </div>
+    <div class="colorcito-opciones text-center p-4 " style="height: 20rem;">
+        <a href='{{$urls["anuncios"]}}' style="height: 20rem;">
+        <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Anuncios</h2>
+        </a>
+    </div>
+</div>
 <script>
 
     fetch('{{$urls["api2"]}}').then(response =>{
@@ -39,7 +53,7 @@
 
         console.log(elem)
 
-        document.getElementById('tabla4').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
         node00=document.createElement("tr")
         node01=document.createElement("td")
         node01.appendChild(document.createTextNode(elem.id))
@@ -58,23 +72,12 @@
         node00.appendChild(node05)
         elementos=node00
 
-        document.getElementById('tabla4').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
 
     }).catch(error => {
         console.error('Error', error);
     })
 </script>
 
-<div class="grid grid-cols-2 sm:grid-cols-3">
-    <div class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
-        <a href='{{$urls["cargos"]}}' style="height: 20rem;">
-        <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Cargos</h2>
-        </a>
-    </div>
-    <div class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
-        <a href='{{$urls["anuncios"]}}' style="height: 20rem;">
-        <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Anuncios</h2>
-        </a>
-    </div>
-</div>
+
 @endsection

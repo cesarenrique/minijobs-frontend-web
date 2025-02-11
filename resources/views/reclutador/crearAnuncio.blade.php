@@ -1,13 +1,20 @@
 @extends('app')
 
 @section('content')
-<h2 class="text-center">Empresa del Anuncio</h2>
-<table id="tabla4">
-</table>
-<h2 class="text-center">Cargo para el Anuncio</h2>
-<table id="tabla2">
-</table>
 
+<div class="perfil-usuario-titulo">
+    <h2>Empresa del Anuncio</h2>
+</div>
+<table id="tabla14">
+</table>
+<div class="perfil-usuario-titulo">
+    <h2>Cargo para el Anuncio</h2>
+</div>
+<table id="tabla10">
+</table>
+<div class="perfil-usuario-titulo">
+    <h2>Formulario</h2>
+</div>
 <div id="formulario-registro-container" class="bg-cyan-200" style="width: 90%; margin:5%; padding-top: 50px; padding-bottom: 50px; display: none;">
     <div class="bg-blue-400 m-auto" style="width: 500px; padding-top: 50px; padding-bottom: 50px; margin-top: 50px; margin-bottom: 50px;">
 
@@ -77,7 +84,7 @@
 
         console.log(elem)
 
-        document.getElementById('tabla4').appendChild(elementos)
+        document.getElementById('tabla14').appendChild(elementos)
         node00=document.createElement("tr")
         node01=document.createElement("td")
         node01.appendChild(document.createTextNode(elem.id))
@@ -96,7 +103,7 @@
         node00.appendChild(node05)
         elementos=node00
 
-        document.getElementById('tabla4').appendChild(elementos)
+        document.getElementById('tabla14').appendChild(elementos)
 
     }).catch(error => {
         console.error('Error', error);
@@ -129,7 +136,7 @@
 
         elementos=node00
 
-        document.getElementById('tabla2').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
 
         node00=document.createElement("tr")
         node01=document.createElement("td")
@@ -144,7 +151,7 @@
 
         elementos=node00
 
-        document.getElementById('tabla2').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
 
 
     }).catch(error => {

@@ -1,15 +1,30 @@
 @extends('app')
 
 @section('content')
-<table id="tabla2">
+<div class="perfil-usuario-titulo">
+    <h2>Plan Año Academico</h2>
+</div>
+<table id="tabla22" class="tabla30">
 </table>
-<table id="tabla4">
+<div class="perfil-usuario-titulo">
+    <h2>Rama Familia Profesional</h2>
+</div>
+<table id="tabla24" class="tabla30">
 </table>
-<table id="tabla5">
+<div class="perfil-usuario-titulo">
+    <h2>Grupo de la carrera</h2>
+</div>
+<table id="tabla25" class="tabla30">
 </table>
-<table id="tabla6">
+<div class="perfil-usuario-titulo">
+    <h2>Carrera Profesional</h2>
+</div>
+<table id="tabla26" class="tabla30">
 </table>
-<table id="tabla7">
+<div class="perfil-usuario-titulo">
+    <h2>Asignaturas</h2>
+</div>
+<table id="tabla10">
 </table>
 <script>
 
@@ -38,7 +53,7 @@
         //console.log(array)
 
 
-        document.getElementById('tabla2').appendChild(elementos)
+        document.getElementById('tabla22').appendChild(elementos)
         node00=document.createElement("tr")
         node01=document.createElement("td")
         node01.appendChild(document.createTextNode(elem.id))
@@ -51,7 +66,7 @@
 
         elementos=node00
 
-        document.getElementById('tabla2').appendChild(elementos)
+        document.getElementById('tabla22').appendChild(elementos)
 
 
         node00=document.createElement("tr")
@@ -70,7 +85,7 @@
         //console.log(array)
 
 
-        document.getElementById('tabla4').appendChild(elementos)
+        document.getElementById('tabla24').appendChild(elementos)
         node00=document.createElement("tr")
         node01=document.createElement("td")
         node01.appendChild(document.createTextNode(elem.id))
@@ -83,7 +98,7 @@
 
         elementos=node00
 
-        document.getElementById('tabla4').appendChild(elementos)
+        document.getElementById('tabla24').appendChild(elementos)
 
         node00=document.createElement("tr")
         node01=document.createElement("th")
@@ -101,7 +116,7 @@
         //console.log(array)
 
 
-        document.getElementById('tabla5').appendChild(elementos)
+        document.getElementById('tabla25').appendChild(elementos)
         node00=document.createElement("tr")
         node01=document.createElement("td")
         node01.appendChild(document.createTextNode(elem.id))
@@ -114,7 +129,7 @@
 
         elementos=node00
 
-        document.getElementById('tabla5').appendChild(elementos)
+        document.getElementById('tabla25').appendChild(elementos)
 
 
         node00=document.createElement("tr")
@@ -133,7 +148,7 @@
         //console.log(array)
 
 
-        document.getElementById('tabla6').appendChild(elementos)
+        document.getElementById('tabla26').appendChild(elementos)
         node00=document.createElement("tr")
         node01=document.createElement("td")
         node01.appendChild(document.createTextNode(elem.id))
@@ -146,7 +161,7 @@
 
         elementos=node00
 
-        document.getElementById('tabla6').appendChild(elementos)
+        document.getElementById('tabla26').appendChild(elementos)
 
 
         node00=document.createElement("tr")
@@ -166,14 +181,14 @@
         //console.log(array)
 
         for(let i=0;i<array.length;i++){
-            document.getElementById('tabla7').appendChild(elementos)
+            document.getElementById('tabla10').appendChild(elementos)
             node00=document.createElement("tr")
             node01=document.createElement("td")
             node01.appendChild(document.createTextNode(array[i].id))
             node02=document.createElement("td")
             node02.appendChild(document.createTextNode(array[i].nombre))
             node06=document.createElement("td")
-            subnode01=document.createTextNode("VER")
+            subnode01=document.createTextNode("VER ASIGNATURA")
             subnode02=document.createElement("a")
             subnode02.appendChild(subnode01)
             referencia='{{$urls["asignatura"]}}'+'/'+array[i].id
@@ -185,7 +200,7 @@
 
             elementos=node00
         }
-        document.getElementById('tabla7').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
     }).catch(error => {
         console.error('Error', error);
     })

@@ -2,11 +2,13 @@
 
 @section('content')
 
-<table id="tabla2">
+<div id="titulo10">
+    <h2>Perfil Profesional</h2>
+</div>
+<table id="tabla10">
 </table>
 
-
-    <script>
+<script>
 
     fetch('{{$urls["api"]}}').then(response =>{
         if(!response.ok){
@@ -36,7 +38,7 @@
 
         elementos=node00
 
-        document.getElementById('tabla2').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
 
         node00=document.createElement("tr")
         node01=document.createElement("td")
@@ -51,7 +53,7 @@
 
         elementos=node00
 
-        document.getElementById('tabla2').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
 
 
     }).catch(error => {

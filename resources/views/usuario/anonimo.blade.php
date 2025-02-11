@@ -1,15 +1,18 @@
 @extends('app')
 
 @section('content')
-<table id="tabla">
+<div id="titulo10">
+    <h2>Perfil Usuario</h2>
+</div>
+<table id="tabla10">
 </table>
 <div class="grid grid-cols-2 sm:grid-cols-3">
-    <div id="listarEmpresas" class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
+    <div id="listarEmpresas" class="colorcito-opciones text-center p-4 " style="height: 20rem;">
         <a href='#' style="height: 20rem;">
         <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Loguearse</h2>
         </a>
     </div>
-    <div id="listarEmpresas" class="bg-indigo-200 text-center p-4 " style="height: 20rem;">
+    <div id="listarEmpresas" class="colorcito-opciones text-center p-4 " style="height: 20rem;">
         <a href="{{route('registro')}}" style="height: 20rem;">
         <h2 class="text-lg font-sans font-bold" style="margin-top:8rem;">Registrarse</h2>
         </a>
@@ -38,7 +41,7 @@
 
         //console.log(array)
 
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
 
         node00=document.createElement("tr")
         node01=document.createElement("td")
@@ -57,7 +60,7 @@
         node00.appendChild(node04)
         node00.appendChild(node05)
         elementos=node00
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla10').appendChild(elementos)
 
 </script>
 

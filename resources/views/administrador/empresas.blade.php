@@ -1,9 +1,14 @@
 @extends('app')
 
 @section('content')
-<table id="tabla">
+<div class="perfil-usuario-titulo">
+    <h2> Empresas</h2>
+</div>
+<table id="tabla14">
+</table>
 
-    <script>
+
+<script>
 
     fetch('{{$urls["api"]}}').then(response =>{
         if(!response.ok){
@@ -40,7 +45,7 @@
         //console.log(array)
 
         for(let i=0;i<array.length;i++){
-            document.getElementById('tabla').appendChild(elementos)
+            document.getElementById('tabla14').appendChild(elementos)
             node00=document.createElement("tr")
             node00.id="referenciar"+i;
             node01=document.createElement("td")
@@ -54,7 +59,7 @@
             node05=document.createElement("td")
             node05.appendChild(document.createTextNode(array[i].email))
             node06=document.createElement("td")
-            subnode01=document.createTextNode("VER")
+            subnode01=document.createTextNode("VER EMPRESA")
             subnode02=document.createElement("a")
             subnode02.appendChild(subnode01)
             referencia='{{$urls["empresa"]}}'+'/'+array[i].id
@@ -68,11 +73,11 @@
             node00.appendChild(node06)
             elementos=node00
         }
-        document.getElementById('tabla').appendChild(elementos)
+        document.getElementById('tabla14').appendChild(elementos)
     }).catch(error => {
         console.error('Error', error);
     })
-    </script>
-</table>
+</script>
+
 
 @endsection
